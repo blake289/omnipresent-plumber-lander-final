@@ -263,7 +263,7 @@
 
     .hero-trust {
       display: flex;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
       justify-content: center;
       gap: 16px 24px;
       margin-top: 36px
@@ -329,7 +329,7 @@
       line-height: 1.75;
       color: var(--text-on-dark-muted);
       max-width: 640px;
-      margin: 0 auto 40px;
+      margin: 48px auto 56px;
       text-align: left
     }
 
@@ -1275,7 +1275,7 @@
       }
 
       .hero-trust {
-        justify-content: flex-start;
+        justify-content: center;
         flex-wrap: nowrap
       }
 
@@ -1283,7 +1283,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        padding-left: 40px
+        padding-left: 90px
       }
 
       .hero-mockup {
@@ -1371,14 +1371,33 @@
         <strong>missed call</strong> is a job your <strong>competitor</strong> wins.
       </h2>
       <div class="problem-body animate-on-scroll">
-        <p>A homeowner's pipe bursts at 11pm. They search "emergency plumber near me." Your business shows up. They tap.
+        <!-- Scene 1: The Setup -->
+        <p style="font-size:1.15em;color:rgba(255,255,255,0.7);font-style:italic;margin-bottom:8px">
+          A homeowner's pipe bursts at <strong style="font-style:normal;color:#fff">11pm.</strong></p>
+        <p style="margin-bottom:8px">They search <strong style="color:#fff">"emergency plumber near me."</strong></p>
+        <p>Your business shows up. They tap.</p>
+
+        <!-- Scene 2: The Problem -->
+        <div style="margin:32px 0;padding-left:20px;border-left:3px solid rgba(240,128,112,0.4)">
+          <p style="margin-bottom:8px">But your site looks like <strong style="color:#fff">every other
+              plumber's.</strong></p>
+          <p style="font-size:1.05em;margin-bottom:8px;color:rgba(255,255,255,0.65)">No reviews. No way to text. Nothing
+            that says <strong style="color:#fff">"call us first."</strong></p>
+          <p style="margin-bottom:16px">They hit back.</p>
+          <p
+            style="font-size:1.25em;font-weight:700;color:#fff;background:rgba(240,128,112,0.15);display:inline-block;padding:8px 16px;border-radius:8px">
+            That's a <span style="color:#f08070">$4,000 job</span> — gone in <span style="color:#f08070">5
+              seconds.</span></p>
+        </div>
+
+        <!-- Scene 3: The Double Loss -->
+        <p style="margin-bottom:8px">And the leads who <strong
+            style="color:#fff;text-transform:uppercase;font-size:0.95em;letter-spacing:0.03em">do</strong> reach out?
         </p>
-        <br>
-        <p>But your site looks like every other plumber's. No reviews. No way to text. Nothing that says "call us
-          first." They hit back. That's a $4,000 job — gone in 5 seconds.</p>
-        <br>
-        <p>And the leads who DO reach out? You're under a sink. You can't answer. No system texts them back. So they
-          call the next plumber. And that plumber answers.</p>
+        <p style="color:rgba(255,255,255,0.65);margin-bottom:8px">You're under a sink. You can't answer. <strong
+            style="color:#fff">No system texts them back.</strong></p>
+        <p style="margin-bottom:8px">So they call the next plumber.</p>
+        <p style="font-size:1.15em;font-weight:600;color:#fff;margin-top:12px">And that plumber answers.</p>
       </div>
       <div class="problem-cards">
         <div class="problem-card animate-on-scroll">
@@ -1404,33 +1423,48 @@
       <span class="section-label animate-on-scroll">The Vision</span>
       <h2 class="section-headline animate-on-scroll" style="max-width:700px;margin-left:auto;margin-right:auto">Your
         phone rings. You're under a sink. <strong>The system handles it.</strong></h2>
-      <p class="section-sub animate-on-scroll" style="max-width:640px;margin-left:auto;margin-right:auto">Imagine
-        finishing a job, checking your phone, and seeing 3 new appointments already booked — leads that would've gone to
+      <p class="section-sub animate-on-scroll" style="max-width:640px;margin-left:auto;margin-right:auto"><em>Imagine
+          finishing a job, checking your phone, and seeing</em> <strong>3 new appointments already booked</strong> —
+        leads that would've gone to
         your competitor if you'd missed the call.</p>
       <div class="vision-cards">
         <div class="vision-card animate-on-scroll">
           <h3>"The 11pm burst pipe call? Handled."</h3>
-          <p>A homeowner searches "emergency plumber near me" at 11pm. They tap your site. Your system texts them within
-            60 seconds: "Got your message. How can we help tonight?" They book. You wake up to a $4,000 job waiting —
-            instead of wondering why the phone didn't ring.</p>
+          <p style="font-style:italic;color:rgba(0,0,0,0.55);margin-bottom:8px">A homeowner searches "emergency plumber
+            near me" at 11pm. They tap your site.</p>
+          <p style="margin-bottom:8px">Your system texts them within <strong>60 seconds</strong>: "Got your message. How
+            can we help tonight?"</p>
+          <p style="margin-bottom:12px">They book.</p>
+          <p style="font-size:1.1em;font-weight:600;color:var(--text-primary)">You wake up to a <span
+              style="color:#c53030">$4,000 job</span> waiting — instead of wondering why the phone didn't ring.</p>
         </div>
         <div class="vision-card animate-on-scroll" style="transition-delay:.1s">
           <h3>"Your reviews grow while you sleep."</h3>
-          <p>You finish a water heater install on Tuesday. Wednesday morning, without you lifting a finger, the customer
-            gets a review request. By Friday, there's a new 5-star review on Google. By month three, you've got 47 new
-            reviews and you're ranking above guys who've been in business twice as long.</p>
+          <p style="font-style:italic;color:rgba(0,0,0,0.55);margin-bottom:8px">You finish a water heater install on
+            Tuesday.</p>
+          <p style="margin-bottom:8px">Wednesday morning, without you lifting a finger, the customer gets a review
+            request.</p>
+          <p style="margin-bottom:12px">By Friday, there's a <strong>new 5-star review</strong> on Google.</p>
+          <p style="font-size:1.1em;font-weight:600;color:var(--text-primary)">By month three, you've got <span
+              style="color:#c53030">47 new reviews</span> and you're ranking above guys who've been in business twice as
+            long.</p>
         </div>
         <div class="vision-card animate-on-scroll" style="transition-delay:.2s">
           <h3>"One dashboard. Zero guessing."</h3>
-          <p>No more wondering which ads work. No more leads slipping through cracks. Every call, every form, every text
-            — tracked. You open one screen and see exactly where your jobs are coming from. For the first time, you know
-            what's actually working.</p>
+          <p style="font-style:italic;color:rgba(0,0,0,0.55);margin-bottom:8px">No more wondering which ads work. No
+            more leads slipping through cracks.</p>
+          <p style="margin-bottom:12px">Every call, every form, every text — <strong>tracked.</strong></p>
+          <p style="font-size:1.1em;font-weight:600;color:var(--text-primary)">You open one screen and see exactly where
+            your jobs are coming from. For the first time, you know <strong>what's actually working.</strong></p>
         </div>
         <div class="vision-card animate-on-scroll" style="transition-delay:.3s">
           <h3>"You stay on the job. The system stays on the leads."</h3>
-          <p>The follow-up happens automatically. The texts go out automatically. The review requests go out
-            automatically. You do what you're good at — fixing pipes. The system does what it's good at — making sure no
-            lead goes cold.</p>
+          <p style="margin-bottom:8px">The follow-up happens <strong>automatically.</strong></p>
+          <p style="margin-bottom:8px">The texts go out automatically. The review requests go out automatically.</p>
+          <p style="margin-bottom:12px;font-style:italic;color:rgba(0,0,0,0.55)">You do what you're good at — fixing
+            pipes.</p>
+          <p style="font-size:1.1em;font-weight:600;color:var(--text-primary)">The system does what it's good at —
+            making sure <strong>no lead goes cold.</strong></p>
         </div>
       </div>
     </div>
@@ -1443,7 +1477,7 @@
       <h2 class="section-headline animate-on-scroll" style="max-width:640px;margin-left:auto;margin-right:auto">A
         website that <strong>books jobs</strong> + a system that <strong>never misses a lead.</strong></h2>
       <p class="section-sub animate-on-scroll" style="max-width:600px;margin-left:auto;margin-right:auto">This isn't a
-        website redesign. It's a complete system that works while you're on the job.</p>
+        website redesign. It's a <strong>complete system</strong> that works while you're on the job.</p>
       <div class="benefits-grid">
         <div class="benefit-card animate-on-scroll">
           <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#2B6CB0" stroke-width="2"
@@ -1453,8 +1487,9 @@
             <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
           </svg>
           <h3>Your Website — Built Free</h3>
-          <p>Custom-designed for your plumbing business. Mobile-first. Fast-loading. Built to turn searches into phone
-            calls. $3K–$5K value, included free.</p>
+          <p>Custom-designed for your plumbing business. Mobile-first. Fast-loading. Built to <strong>turn searches into
+              phone
+              calls.</strong> <span style="color:#c53030;font-weight:600">$3K–$5K value</span>, included free.</p>
         </div>
         <div class="benefit-card animate-on-scroll" style="transition-delay:.1s">
           <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#2B6CB0" stroke-width="2"
@@ -1462,8 +1497,9 @@
             <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
           </svg>
           <h3>Instant Lead Response</h3>
-          <p>Every form fill gets an automatic text in seconds. Every missed call gets a text within 60 seconds — even
-            at 2am. No lead goes cold.</p>
+          <p>Every form fill gets an automatic text in seconds. Every missed call gets a text within <strong>60
+              seconds</strong> — even
+            at 2am. <strong>No lead goes cold.</strong></p>
         </div>
         <div class="benefit-card animate-on-scroll" style="transition-delay:.2s">
           <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#2B6CB0" stroke-width="2"
@@ -1472,7 +1508,8 @@
               points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
           </svg>
           <h3>Automatic Review Requests</h3>
-          <p>After every completed job, your customer gets a review request. More 5-star reviews. Higher Google ranking.
+          <p>After every completed job, your customer gets a review request. <strong>More 5-star reviews.</strong>
+            Higher Google ranking.
             More calls.</p>
         </div>
         <div class="benefit-card animate-on-scroll" style="transition-delay:.3s">
@@ -1483,7 +1520,8 @@
             <line x1="6" y1="20" x2="6" y2="14" />
           </svg>
           <h3>One Dashboard. Full Visibility.</h3>
-          <p>See every lead, every call, every source — in one place. Know what's working. No guessing.</p>
+          <p>See every lead, every call, every source — <strong>in one place.</strong> Know what's working. No guessing.
+          </p>
         </div>
       </div>
       <p class="guarantee-line animate-on-scroll">✓ Results in 30 days or your money back.</p>
@@ -1507,7 +1545,8 @@
             </svg>
           </div>
           <h3>15-Minute Call</h3>
-          <p>Tell us about your business and where leads are slipping. We show you exactly what we'd build and how the
+          <p>Tell us about your business and where leads are slipping. We show you <strong>exactly what we'd
+              build</strong> and how the
             system works. No pitch. No pressure.</p>
         </div>
         <div class="step-card animate-on-scroll" style="transition-delay:.1s">
@@ -1522,8 +1561,10 @@
             </svg>
           </div>
           <h3>Your Website Goes Live in 48 Hours</h3>
-          <p>We build a custom website for your plumbing business — real design, real copywriting, mobile-optimized. You
-            review everything before launch.</p>
+          <p>We build a custom website for your plumbing business — real design, real copywriting, mobile-optimized.
+            <strong>You
+              review everything</strong> before launch.
+          </p>
         </div>
         <div class="step-card animate-on-scroll" style="transition-delay:.2s">
           <div class="step-header">
@@ -1533,8 +1574,9 @@
             </svg>
           </div>
           <h3>The System Takes Over</h3>
-          <p>Instant lead response, missed-call text-back, and review requests all activate. Most clients see results
-            within 30 days.</p>
+          <p>Instant lead response, missed-call text-back, and review requests all activate. Most clients <strong>see
+              results
+              within 30 days.</strong></p>
         </div>
       </div>
       <p class="steps-summary animate-on-scroll"><span>→</span> Average client sees ROI within the first 30 days.</p>
@@ -1553,8 +1595,9 @@
           <div class="stars">★★★★★</div>
           <div class="quote-title">"System Paid for Itself in Less Than a Month"</div>
           <p class="quote-body">Paid an agency $12,000 for a website that generated zero calls. This system cost me
-            nothing upfront and brought in 11 new jobs the first month. Between the instant lead responses and the
-            missed-call texts, I stopped losing emergency jobs to voicemail.</p>
+            nothing upfront and brought in <strong>11 new jobs the first month.</strong> Between the instant lead
+            responses and the
+            missed-call texts, I <strong>stopped losing emergency jobs</strong> to voicemail.</p>
           <div class="name">Mike R.</div>
           <div class="title">Reliant Plumbing & Drain · San Diego, CA</div>
         </div>
@@ -1563,7 +1606,8 @@
           <div class="stars">★★★★★</div>
           <div class="quote-title">"$41,000 in Jobs from Leads That Would've Been Lost"</div>
           <p class="quote-body">The missed-call text-back alone changed everything. We were losing 8–10 calls a week to
-            voicemail. Now they get a text in under a minute. Last quarter we tracked $41K in jobs that came from those
+            voicemail. Now they get a text in under a minute. Last quarter we tracked <strong>$41K in jobs</strong> that
+            came from those
             recovered leads.</p>
           <div class="name">James L.</div>
           <div class="title">Valley Plumbing & Heating · Phoenix, AZ</div>
@@ -1572,7 +1616,7 @@
           <img src="testimonial-danny.png" alt="Danny W." class="testimonial-photo" loading="lazy">
           <div class="stars">★★★★★</div>
           <div class="quote-title">"89 New 5-Star Reviews in Less Than 60 Days"</div>
-          <p class="quote-body">We went from 35 Google reviews to 124 in 30 days. The automatic review
+          <p class="quote-body">We went from <strong>35 Google reviews to 124</strong> in 30 days. The automatic review
             requests alone
             were worth it. We're ranking higher, getting more calls, and the website actually looks like a real company.
             Should've done this years ago.</p>
