@@ -1,0 +1,1881 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Omnipresent | Smart Websites for Plumbing Companies</title>
+  <meta name="description"
+    content="We build plumbing companies a premium website in 48 hours — free. Plus instant lead response, missed-call text-back, and automated reviews. $297/mo. Results in 30 days or your money back.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --bg-white: #FFF;
+      --bg-light: #F5F7FA;
+      --bg-dark: #0B1526;
+      --bg-dark-alt: #101D33;
+      --bg-card-dark: #162038;
+      --text-primary: #0B1526;
+      --text-secondary: #5A6A80;
+      --text-muted: #8896A6;
+      --text-on-dark: #FFF;
+      --text-on-dark-muted: #A0B4CC;
+      --accent-blue: #1A73E8;
+      --accent-blue-light: #4A90F4;
+      --section-label: #1A73E8;
+      --cta-primary: #DC2626;
+      --cta-primary-hover: #B91C1C;
+      --cta-text: #FFF;
+      --green-check: #00C853;
+      --green-bg: rgba(0, 200, 83, 0.1);
+      --red-stat: #EF4444;
+      --red-bg: rgba(239, 68, 68, 0.08);
+      --border-light: #E4E9F0;
+      --border-dark: rgba(255, 255, 255, 0.08);
+      --shadow-sm: 0 1px 4px rgba(0, 0, 0, 0.06);
+      --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+      --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.1);
+      --shadow-card-dark: 0 4px 20px rgba(0, 0, 0, 0.3);
+      --urgency-bg: #DC2626;
+      --urgency-text: #FFF;
+      --font-display: 'Inter', -apple-system, sans-serif;
+      --font-body: 'Inter', -apple-system, sans-serif;
+      --container-max: 1140px;
+      --container-padding: 24px;
+      --card-radius: 16px;
+      --btn-radius: 100px;
+      --input-radius: 12px
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    html {
+      font-size: 16px;
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--text-primary);
+      background: var(--bg-white);
+      line-height: 1.7;
+      overflow-x: hidden;
+      padding-top: 38px
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit
+    }
+
+    button {
+      cursor: pointer;
+      border: none;
+      font-family: inherit
+    }
+
+    .container {
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding-left: var(--container-padding);
+      padding-right: var(--container-padding)
+    }
+
+    .section-label {
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 15px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent-blue);
+      background: rgba(26, 115, 232, 0.08);
+      padding: 6px 16px;
+      border-radius: 100px;
+      display: inline-block;
+      margin-bottom: 20px
+    }
+
+    .section-label-dark {
+      background: rgba(26, 115, 232, 0.15)
+    }
+
+    .section-headline {
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-size: 30px;
+      line-height: 1.25;
+      margin-bottom: 16px;
+      letter-spacing: -0.02em
+    }
+
+    .section-headline strong,
+    .section-headline b {
+      font-weight: 800
+    }
+
+    .section-sub {
+      font-family: var(--font-body);
+      font-weight: 400;
+      font-size: 17px;
+      line-height: 1.65;
+      color: var(--text-secondary);
+      margin-bottom: 32px;
+      text-align: left
+    }
+
+    .cta-btn {
+      display: inline-block;
+      background: var(--cta-primary);
+      color: #FFF;
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 16px;
+      padding: 16px 36px;
+      border-radius: var(--btn-radius);
+      box-shadow: 0 4px 14px rgba(220, 38, 38, 0.3);
+      transition: all .25s ease;
+      text-align: center;
+      width: 100%
+    }
+
+    .cta-btn:hover {
+      background: var(--cta-primary-hover);
+      transform: translateY(-1px)
+    }
+
+    .cta-micro {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 12px;
+      text-align: center
+    }
+
+    .text-center {
+      text-align: center
+    }
+
+    /* Urgency Bar */
+    .urgency-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: var(--urgency-bg);
+      color: #FFF;
+      font-weight: 500;
+      font-size: 15px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 10px 16px;
+      text-align: center;
+      z-index: 9999
+    }
+
+    /* Animations */
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity .5s cubic-bezier(.25, .46, .45, .94), transform .5s cubic-bezier(.25, .46, .45, .94)
+    }
+
+    .animate-on-scroll.visible {
+      opacity: 1;
+      transform: translateY(0)
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1
+      }
+
+      50% {
+        opacity: .4
+      }
+    }
+
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--urgency-bg);
+      display: inline-block;
+      animation: pulse 2s infinite;
+      margin-right: 6px;
+      vertical-align: middle
+    }
+
+    /* Hero */
+    .hero {
+      padding: 48px 0
+    }
+
+    .hero-label {
+      font-weight: 600;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent-blue);
+      background: rgba(26, 115, 232, 0.08);
+      padding: 6px 16px;
+      border-radius: 100px;
+      display: inline-block;
+      margin-bottom: 20px
+    }
+
+    .hero h1 {
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-size: 36px;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+      margin-bottom: 20px
+    }
+
+    .hero h1 strong {
+      font-weight: 800
+    }
+
+    .hero-sub {
+      font-size: 17px;
+      line-height: 1.65;
+      color: var(--text-secondary);
+      margin-bottom: 32px
+    }
+
+    .hero-trust {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px 24px;
+      margin-top: 28px
+    }
+
+    .hero-trust span {
+      font-weight: 500;
+      font-size: 14px;
+      color: var(--text-secondary)
+    }
+
+    .hero-trust .check {
+      color: var(--green-check);
+      margin-right: 4px
+    }
+
+    .hero-img {
+      display: none
+    }
+
+    /* Stats Bar */
+    .stats-bar {
+      background: var(--bg-light);
+      border-top: 1px solid var(--border-light);
+      padding: 32px 0
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      text-align: center;
+      gap: 16px
+    }
+
+    .stat-num {
+      font-weight: 700;
+      font-size: 40px;
+      line-height: 1.1;
+      color: var(--text-primary)
+    }
+
+    .stat-label {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      margin-top: 4px
+    }
+
+    /* Problem */
+    .problem {
+      background: var(--bg-dark);
+      padding: 64px 0;
+      color: #FFF
+    }
+
+    .problem .section-headline {
+      color: #FFF
+    }
+
+    .problem-body {
+      font-size: 16px;
+      line-height: 1.75;
+      color: var(--text-on-dark-muted);
+      max-width: 640px;
+      margin: 0 auto 40px;
+      text-align: left
+    }
+
+    .problem-cards {
+      display: grid;
+      gap: 12px
+    }
+
+    .problem-card {
+      background: #FFF;
+      border: 1px solid var(--border-light);
+      border-radius: var(--card-radius);
+      padding: 24px
+    }
+
+    .problem-card .num {
+      font-weight: 700;
+      font-size: 36px;
+      color: var(--red-stat);
+      margin-bottom: 8px
+    }
+
+    .problem-card .desc {
+      font-size: 14px;
+      color: var(--text-secondary)
+    }
+
+    /* Vision */
+    .vision {
+      padding: 64px 0
+    }
+
+    .vision-cards {
+      display: grid;
+      gap: 24px;
+      margin-top: 40px
+    }
+
+    .vision-card {
+      background: var(--bg-light);
+      border-radius: var(--card-radius);
+      padding: 28px;
+      border-left: 4px solid var(--accent-blue)
+    }
+
+    .vision-card h3 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 20px;
+      margin-bottom: 12px;
+      color: var(--text-primary)
+    }
+
+    .vision-card p {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      text-align: left
+    }
+
+    /* Solution */
+    .solution {
+      padding: 64px 0;
+      background: var(--bg-light)
+    }
+
+    .benefits-grid {
+      display: grid;
+      gap: 16px;
+      margin-top: 40px
+    }
+
+    .benefit-card {
+      background: #FFF;
+      padding: 28px;
+      border-radius: var(--card-radius);
+      box-shadow: var(--shadow-sm)
+    }
+
+    .benefit-card svg {
+      color: var(--accent-blue);
+      margin-bottom: 16px
+    }
+
+    .benefit-card h3 {
+      font-weight: 600;
+      font-size: 18px;
+      margin-bottom: 8px;
+      text-align: center
+    }
+
+    .benefit-card p {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      text-align: left
+    }
+
+    .guarantee-line {
+      font-weight: 600;
+      font-size: 19px;
+      color: var(--green-check);
+      text-align: center;
+      margin-top: 40px
+    }
+
+    /* Process */
+    .process {
+      padding: 64px 0
+    }
+
+    .steps-grid {
+      display: grid;
+      gap: 16px;
+      margin-top: 40px
+    }
+
+    .step-card {
+      background: var(--bg-light);
+      border-radius: var(--card-radius);
+      padding: 28px
+    }
+
+    .step-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px
+    }
+
+    .step-num {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--accent-blue);
+      color: #FFF;
+      font-weight: 700;
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0
+    }
+
+    .step-card h3 {
+      font-weight: 600;
+      font-size: 20px;
+      text-align: center
+    }
+
+    .step-card p {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      text-align: left;
+      margin-top: 8px
+    }
+
+    .steps-summary {
+      font-weight: 500;
+      font-size: 19px;
+      text-align: center;
+      margin-top: 32px;
+      color: var(--green-check)
+    }
+
+    .steps-summary span {
+      color: var(--accent-blue)
+    }
+
+    /* Social Proof */
+    .proof {
+      background: var(--bg-light);
+      padding: 64px 0
+    }
+
+    .testimonials-scroll {
+      display: flex;
+      gap: 16px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: 8px;
+      scroll-padding-left: 24px
+    }
+
+    .testimonials-scroll::-webkit-scrollbar {
+      display: none
+    }
+
+    .testimonial-card {
+      min-width: calc(100% - 32px);
+      scroll-snap-align: start;
+      background: #FFF;
+      border: 1px solid var(--border-light);
+      border-left: 3px solid var(--accent-blue);
+      border-radius: var(--card-radius);
+      padding: 28px;
+      box-shadow: var(--shadow-sm);
+      flex-shrink: 0;
+      text-align: left;
+      display: flex;
+      flex-direction: column
+    }
+
+    .testimonial-card .stars {
+      color: #FBBF24;
+      font-size: 16px;
+      margin-bottom: 12px;
+      text-align: center
+    }
+
+    .testimonial-card .quote-title {
+      font-weight: 600;
+      font-size: 18px;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+      text-align: center
+    }
+
+    .testimonial-card .quote-body {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 20px
+    }
+
+    .testimonial-card .name {
+      font-weight: 600;
+      font-size: 15px;
+      color: var(--text-primary);
+      margin-top: auto;
+      padding-top: 16px
+    }
+
+    .testimonial-card .title {
+      font-size: 13px;
+      color: var(--text-muted)
+    }
+
+    .testimonial-photo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center top;
+      margin: 0 auto 20px;
+      display: block;
+      border: 3px solid var(--border-light);
+      box-shadow: var(--shadow-md)
+    }
+
+    /* Who It's For */
+    .who-for {
+      padding: 64px 0
+    }
+
+    .who-grid {
+      display: grid;
+      gap: 32px;
+      margin-top: 40px
+    }
+
+    .who-col h3 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 22px;
+      margin-bottom: 20px
+    }
+
+    .who-col h3.for-title {
+      color: var(--green-check)
+    }
+
+    .who-col h3.not-title {
+      color: var(--red-stat)
+    }
+
+    .who-col ul {
+      list-style: none;
+      padding: 0
+    }
+
+    .who-col li {
+      font-size: 15px;
+      line-height: 1.7;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border-light);
+      color: var(--text-secondary)
+    }
+
+    .who-col li:last-child {
+      border-bottom: none
+    }
+
+    .who-col li .icon {
+      margin-right: 8px;
+      font-size: 16px
+    }
+
+    .who-cta {
+      font-weight: 600;
+      font-size: 17px;
+      color: var(--accent-blue);
+      text-align: center;
+      margin-top: 40px
+    }
+
+    /* Case Study */
+    .case-study-section {
+      background: var(--bg-light);
+      padding: 64px 0
+    }
+
+    .case-study {
+      background: #FFF;
+      border: 1px solid var(--border-light);
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: var(--shadow-md);
+      max-width: 800px;
+      margin: 0 auto
+    }
+
+    .case-study .cs-label {
+      font-weight: 600;
+      font-size: 15px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent-blue);
+      margin-bottom: 12px
+    }
+
+    .case-study .cs-name {
+      font-weight: 700;
+      font-size: 22px;
+      margin-bottom: 4px
+    }
+
+    .case-study .cs-desc {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 24px
+    }
+
+    .cs-columns {
+      display: grid;
+      gap: 24px
+    }
+
+    .cs-col-label {
+      font-weight: 600;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 12px
+    }
+
+    .cs-col-label.before {
+      color: var(--red-stat)
+    }
+
+    .cs-col-label.after {
+      color: var(--green-check)
+    }
+
+    .cs-item {
+      font-size: 14px;
+      margin-bottom: 8px;
+      line-height: 1.5
+    }
+
+    .cs-item.bad {
+      color: var(--text-muted)
+    }
+
+    .cs-item.good {
+      color: var(--text-primary)
+    }
+
+    .cs-result {
+      font-weight: 700;
+      font-size: 20px;
+      text-align: center;
+      padding-top: 24px;
+      margin-top: 24px;
+      border-top: 1px solid var(--border-light)
+    }
+
+    .cs-result-sub {
+      font-weight: 500;
+      font-size: 15px;
+      color: var(--green-check);
+      text-align: center;
+      margin-top: 4px
+    }
+
+    /* Pricing */
+    .pricing {
+      background: var(--bg-dark);
+      padding: 64px 0;
+      color: #FFF
+    }
+
+    .pricing .section-headline {
+      color: #FFF
+    }
+
+    .pricing .section-sub {
+      color: var(--text-on-dark-muted)
+    }
+
+    .value-card {
+      background: var(--bg-card-dark);
+      border: 1px solid var(--border-dark);
+      border-radius: 16px;
+      padding: 32px;
+      max-width: 600px;
+      margin: 40px auto 0
+    }
+
+    .value-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06)
+    }
+
+    .value-row:last-child {
+      border-bottom: none
+    }
+
+    .value-left .v-name {
+      font-weight: 500;
+      font-size: 15px;
+      color: #FFF
+    }
+
+    .value-left .v-desc {
+      font-size: 13px;
+      color: var(--text-on-dark-muted);
+      margin-top: 2px
+    }
+
+    .value-left .check {
+      color: var(--green-check);
+      margin-right: 6px
+    }
+
+    .value-right {
+      font-size: 14px;
+      color: var(--text-on-dark-muted);
+      text-decoration: line-through;
+      white-space: nowrap;
+      flex-shrink: 0;
+      margin-left: 16px
+    }
+
+    .price-reveal {
+      background: linear-gradient(135deg, #16803C, #22A34D);
+      border-radius: 12px;
+      padding: 24px 32px;
+      text-align: center;
+      margin-top: 24px
+    }
+
+    .price-old {
+      font-size: 19px;
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: line-through;
+      margin-bottom: 8px
+    }
+
+    .price-label {
+      font-weight: 600;
+      font-size: 15px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #FFF;
+      margin-bottom: 4px
+    }
+
+    .price-amount {
+      font-weight: 700;
+      font-size: 40px;
+      color: #FFF
+    }
+
+    .price-roi {
+      font-size: 15px;
+      color: var(--text-on-dark-muted);
+      text-align: center;
+      margin-top: 20px
+    }
+
+    /* FAQ */
+    .faq {
+      background: var(--bg-light);
+      padding: 64px 0
+    }
+
+    .faq-list {
+      max-width: 720px;
+      margin: 40px auto 0
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border-light)
+    }
+
+    .faq-q {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 16px;
+      color: var(--text-primary);
+      width: 100%;
+      background: none;
+      text-align: left;
+      gap: 16px
+    }
+
+    .faq-icon {
+      font-size: 20px;
+      color: var(--text-muted);
+      transition: transform .2s;
+      flex-shrink: 0
+    }
+
+    .faq-item.open .faq-icon {
+      transform: rotate(45deg)
+    }
+
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .3s ease, opacity .2s ease;
+      opacity: 0
+    }
+
+    .faq-item.open .faq-a {
+      max-height: 500px;
+      opacity: 1
+    }
+
+    .faq-a p {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      padding-bottom: 20px
+    }
+
+    /* Final CTA */
+    .final-cta {
+      background: var(--bg-dark);
+      padding: 64px 0;
+      color: #FFF
+    }
+
+    .final-cta .section-headline {
+      color: #FFF
+    }
+
+    .scarcity-line {
+      font-weight: 500;
+      font-size: 15px;
+      color: var(--urgency-bg);
+      text-align: center;
+      margin-top: 12px
+    }
+
+    .form-card {
+      background: #FFF;
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: var(--shadow-lg);
+      max-width: 480px;
+      margin: 32px auto 0
+    }
+
+    .form-card h3 {
+      font-weight: 700;
+      font-size: 22px;
+      text-align: center;
+      margin-bottom: 8px;
+      color: var(--text-primary)
+    }
+
+    .form-card .form-sub {
+      font-size: 16px;
+      color: var(--text-muted);
+      text-align: center;
+      margin-bottom: 24px
+    }
+
+    .form-card .form-sub a {
+      color: var(--accent-blue)
+    }
+
+    .form-group {
+      margin-bottom: 16px
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 500;
+      font-size: 13px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 6px
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1px solid var(--border-light);
+      border-radius: var(--input-radius);
+      font-size: 16px;
+      font-family: var(--font-body)
+    }
+
+    .form-group input:focus {
+      outline: none;
+      border-color: var(--accent-blue)
+    }
+
+    .form-card .cta-btn {
+      margin-top: 8px
+    }
+
+    .form-trust {
+      margin-top: 20px
+    }
+
+    .form-trust li {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+      list-style: none
+    }
+
+    .form-trust .check {
+      color: var(--green-check);
+      margin-right: 4px
+    }
+
+    .form-success {
+      text-align: center;
+      padding: 40px 0
+    }
+
+    .form-success .check-lg {
+      font-size: 48px;
+      color: var(--green-check);
+      margin-bottom: 16px
+    }
+
+    .form-success h3 {
+      font-weight: 600;
+      font-size: 20px;
+      color: var(--text-primary);
+      margin-bottom: 8px
+    }
+
+    .form-success p {
+      font-size: 15px;
+      color: var(--text-secondary)
+    }
+
+    .form-error {
+      color: var(--red-stat);
+      font-size: 13px;
+      margin-top: 8px;
+      text-align: center
+    }
+
+    /* Footer */
+    .site-footer {
+      background: var(--bg-dark-alt);
+      padding: 32px 24px;
+      text-align: center;
+      color: var(--text-on-dark-muted);
+      font-size: 16px
+    }
+
+    .site-footer a {
+      color: var(--accent-blue-light)
+    }
+
+    .site-footer a:hover {
+      text-decoration: underline
+    }
+
+    .site-footer p {
+      margin-bottom: 4px
+    }
+
+    /* Mobile Sticky CTA */
+    .sticky-cta {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #FFF;
+      border-top: 1px solid var(--border-light);
+      box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.08);
+      padding: 12px 16px;
+      padding-bottom: calc(12px + env(safe-area-inset-bottom));
+      z-index: 9998;
+      transform: translateY(100%);
+      transition: transform .3s ease
+    }
+
+    .sticky-cta.show {
+      transform: translateY(0)
+    }
+
+    .sticky-cta .cta-btn {
+      padding: 14px;
+      font-size: 16px
+    }
+
+    /* Desktop */
+    @media(min-width:768px) {
+      .container {
+        padding-left: 40px;
+        padding-right: 40px
+      }
+
+      .section-headline {
+        font-size: 40px
+      }
+
+      .section-sub {
+        font-size: 20px
+      }
+
+      .cta-btn {
+        font-size: 18px;
+        padding: 20px 40px;
+        width: auto;
+        min-width: 280px
+      }
+
+      .hero {
+        padding: 72px 0 64px
+      }
+
+      .hero h1 {
+        font-size: 52px
+      }
+
+      .hero-sub {
+        font-size: 20px;
+        max-width: 560px
+      }
+
+      .hero-trust {
+        gap: 24px
+      }
+
+      .stat-num {
+        font-size: 52px
+      }
+
+      .problem {
+        padding: 96px 0
+      }
+
+      .problem-body {
+        font-size: 18px
+      }
+
+      .problem-cards {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px
+      }
+
+      .problem-card .num {
+        font-size: 44px
+      }
+
+      .problem-card .desc {
+        font-size: 15px
+      }
+
+      .vision {
+        padding: 96px 0
+      }
+
+      .vision-cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px
+      }
+
+      .vision-card {
+        padding: 36px
+      }
+
+      .vision-card h3 {
+        font-size: 22px
+      }
+
+      .vision-card p {
+        font-size: 16px
+      }
+
+      .solution {
+        padding: 96px 0
+      }
+
+      .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px
+      }
+
+      .benefit-card {
+        padding: 36px
+      }
+
+      .guarantee-line {
+        font-size: 18px
+      }
+
+      .process {
+        padding: 96px 0
+      }
+
+      .steps-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px
+      }
+
+      .proof {
+        padding: 96px 0
+      }
+
+      .testimonials-scroll {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        overflow: visible
+      }
+
+      .testimonial-card {
+        min-width: unset
+      }
+
+      .who-for {
+        padding: 96px 0
+      }
+
+      .who-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 48px
+      }
+
+      .case-study-section {
+        padding: 96px 0
+      }
+
+      .case-study {
+        padding: 48px
+      }
+
+      .cs-columns {
+        grid-template-columns: 1fr 1fr
+      }
+
+      .pricing {
+        padding: 96px 0
+      }
+
+      .value-card {
+        padding: 40px
+      }
+
+      .price-amount {
+        font-size: 48px
+      }
+
+      .faq {
+        padding: 96px 0
+      }
+
+      .faq-q {
+        font-size: 17px
+      }
+
+      .final-cta {
+        padding: 80px 0
+      }
+
+      .final-cta .section-headline {
+        font-size: 36px
+      }
+
+      .form-card {
+        padding: 40px
+      }
+
+      .form-card h3 {
+        font-size: 24px
+      }
+
+      .form-trust li {
+        font-size: 14px
+      }
+    }
+
+    @media(min-width:1024px) {
+      .hero-content {
+        display: grid;
+        grid-template-columns: 3fr 2fr;
+        gap: 40px;
+        align-items: center
+      }
+
+      .hero-img {
+        display: block
+      }
+
+      .hero-mockup {
+        width: 100%;
+        max-width: 480px;
+        aspect-ratio: 480/540;
+        background: linear-gradient(135deg, #1a365d, #2B6CB0);
+        border-radius: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #FFF;
+        font-size: 18px;
+        font-weight: 600;
+        text-align: center;
+        padding: 40px;
+        box-shadow: var(--shadow-lg)
+      }
+
+      .sticky-cta {
+        display: none !important
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Urgency Bar -->
+  <div class="urgency-bar">Now accepting <strong>5</strong> new plumbing companies for February</div>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1>Your <strong>plumbing website</strong> is losing you jobs. We replace it in <strong>48 hours</strong> —
+            free.</h1>
+          <p class="hero-sub">We build you a website that turns searches into booked calls — then automate your lead
+            follow-up, missed-call texts, and review requests. You stay on the job. The system handles the rest.</p>
+          <a href="#book" class="cta-btn" id="hero-cta"
+            style="display:block;width:fit-content;margin-left:auto;margin-right:auto">Book My Free Strategy Call →</a>
+          <div class="hero-trust">
+            <span><span class="check">✓</span> $0 to start</span>
+            <span><span class="check">✓</span> No contracts</span>
+            <span><span class="check">✓</span> 30-day money-back guarantee</span>
+          </div>
+        </div>
+        <div class="hero-img">
+          <div class="hero-mockup">Your Custom Plumber Website — Live in 48 Hours</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Stats Bar -->
+  <div class="stats-bar">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="animate-on-scroll">
+          <div class="stat-num" data-target="1200" data-prefix="" data-suffix="+">0</div>
+          <div class="stat-label">Local Businesses Served</div>
+        </div>
+        <div class="animate-on-scroll" style="transition-delay:.1s">
+          <div class="stat-num" data-target="47" data-prefix="$" data-suffix="M+">0</div>
+          <div class="stat-label">Revenue Generated for Clients</div>
+        </div>
+        <div class="animate-on-scroll" style="transition-delay:.2s">
+          <div class="stat-num" data-target="340" data-prefix="" data-suffix="+">0</div>
+          <div class="stat-label">Five-Star Google Reviews</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Problem -->
+  <section class="problem">
+    <div class="container text-center">
+      <span class="section-label section-label-dark animate-on-scroll">The Real Problem</span>
+      <h2 class="section-headline animate-on-scroll" style="max-width:700px;margin-left:auto;margin-right:auto">Every
+        <strong>missed call</strong> is a job your <strong>competitor</strong> wins.
+      </h2>
+      <div class="problem-body animate-on-scroll">
+        <p>A homeowner's pipe bursts at 11pm. They search "emergency plumber near me." Your business shows up. They tap.
+        </p>
+        <br>
+        <p>But your site looks like every other plumber's. No reviews. No way to text. Nothing that says "call us
+          first." They hit back. That's a $4,000 job — gone in 5 seconds.</p>
+        <br>
+        <p>And the leads who DO reach out? You're under a sink. You can't answer. No system texts them back. So they
+          call the next plumber. And that plumber answers.</p>
+      </div>
+      <div class="problem-cards">
+        <div class="problem-card animate-on-scroll">
+          <div class="num">60%+</div>
+          <div class="desc">of plumbing website visitors leave without calling</div>
+        </div>
+        <div class="problem-card animate-on-scroll" style="transition-delay:.1s">
+          <div class="num">$5K–$15K+</div>
+          <div class="desc">lost every month from leads that never hear back</div>
+        </div>
+        <div class="problem-card animate-on-scroll" style="transition-delay:.2s">
+          <div class="num">78%</div>
+          <div class="desc">of customers hire the first business to respond</div>
+        </div>
+      </div>
+      <a href="#book" class="cta-btn" style="margin-top:40px;display:inline-block">Book My Free Strategy Call →</a>
+    </div>
+  </section>
+
+  <!-- Desired Outcome / Vision -->
+  <section class="vision">
+    <div class="container text-center">
+      <span class="section-label animate-on-scroll">The Vision</span>
+      <h2 class="section-headline animate-on-scroll" style="max-width:700px;margin-left:auto;margin-right:auto">Your
+        phone rings. You're under a sink. <strong>The system handles it.</strong></h2>
+      <p class="section-sub animate-on-scroll" style="max-width:640px;margin-left:auto;margin-right:auto">Imagine
+        finishing a job, checking your phone, and seeing 3 new appointments already booked — leads that would've gone to
+        your competitor if you'd missed the call.</p>
+      <div class="vision-cards">
+        <div class="vision-card animate-on-scroll">
+          <h3>"The 11pm burst pipe call? Handled."</h3>
+          <p>A homeowner searches "emergency plumber near me" at 11pm. They tap your site. Your system texts them within
+            60 seconds: "Got your message. How can we help tonight?" They book. You wake up to a $4,000 job waiting —
+            instead of wondering why the phone didn't ring.</p>
+        </div>
+        <div class="vision-card animate-on-scroll" style="transition-delay:.1s">
+          <h3>"Your reviews grow while you sleep."</h3>
+          <p>You finish a water heater install on Tuesday. Wednesday morning, without you lifting a finger, the customer
+            gets a review request. By Friday, there's a new 5-star review on Google. By month three, you've got 47 new
+            reviews and you're ranking above guys who've been in business twice as long.</p>
+        </div>
+        <div class="vision-card animate-on-scroll" style="transition-delay:.2s">
+          <h3>"One dashboard. Zero guessing."</h3>
+          <p>No more wondering which ads work. No more leads slipping through cracks. Every call, every form, every text
+            — tracked. You open one screen and see exactly where your jobs are coming from. For the first time, you know
+            what's actually working.</p>
+        </div>
+        <div class="vision-card animate-on-scroll" style="transition-delay:.3s">
+          <h3>"You stay on the job. The system stays on the leads."</h3>
+          <p>The follow-up happens automatically. The texts go out automatically. The review requests go out
+            automatically. You do what you're good at — fixing pipes. The system does what it's good at — making sure no
+            lead goes cold.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solution / Offer -->
+  <section class="solution">
+    <div class="container text-center">
+      <span class="section-label animate-on-scroll">The Solution</span>
+      <h2 class="section-headline animate-on-scroll" style="max-width:640px;margin-left:auto;margin-right:auto">A
+        website that <strong>books jobs</strong> + a system that <strong>never misses a lead.</strong></h2>
+      <p class="section-sub animate-on-scroll" style="max-width:600px;margin-left:auto;margin-right:auto">This isn't a
+        website redesign. It's a complete system that works while you're on the job.</p>
+      <div class="benefits-grid">
+        <div class="benefit-card animate-on-scroll">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#2B6CB0" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10" />
+            <line x1="2" y1="12" x2="22" y2="12" />
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+          </svg>
+          <h3>Premium Website — Built Free</h3>
+          <p>Custom-designed for your plumbing business. Mobile-first. Fast-loading. Built to turn searches into phone
+            calls. $3K–$5K value, included free.</p>
+        </div>
+        <div class="benefit-card animate-on-scroll" style="transition-delay:.1s">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#2B6CB0" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+          </svg>
+          <h3>Instant Lead Response</h3>
+          <p>Every form fill gets an automatic text in seconds. Every missed call gets a text within 60 seconds — even
+            at 2am. No lead goes cold.</p>
+        </div>
+        <div class="benefit-card animate-on-scroll" style="transition-delay:.2s">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#2B6CB0" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <polygon
+              points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+          </svg>
+          <h3>Automatic Review Requests</h3>
+          <p>After every completed job, your customer gets a review request. More 5-star reviews. Higher Google ranking.
+            More calls.</p>
+        </div>
+        <div class="benefit-card animate-on-scroll" style="transition-delay:.3s">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#2B6CB0" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="20" x2="18" y2="10" />
+            <line x1="12" y1="20" x2="12" y2="4" />
+            <line x1="6" y1="20" x2="6" y2="14" />
+          </svg>
+          <h3>One Dashboard. Full Visibility.</h3>
+          <p>See every lead, every call, every source — in one place. Know what's working. No guessing.</p>
+        </div>
+      </div>
+      <p class="guarantee-line animate-on-scroll">✓ Results in 30 days or your money back.</p>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="process">
+    <div class="container text-center">
+      <span class="section-label animate-on-scroll">How It Works</span>
+      <h2 class="section-headline animate-on-scroll">Three steps. You keep <strong>running jobs.</strong></h2>
+      <p class="section-sub animate-on-scroll" style="max-width:500px;margin-left:auto;margin-right:auto">We handle
+        everything. You approve. That's it.</p>
+      <div class="steps-grid">
+        <div class="step-card animate-on-scroll">
+          <div class="step-header">
+            <div class="step-num">1</div><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#2B6CB0"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg>
+          </div>
+          <h3>15-Minute Strategy Call</h3>
+          <p>Tell us about your business and where leads are slipping. We show you exactly what we'd build and how the
+            system works. No pitch. No pressure.</p>
+        </div>
+        <div class="step-card animate-on-scroll" style="transition-delay:.1s">
+          <div class="step-header">
+            <div class="step-num">2</div><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#2B6CB0"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z" />
+              <path
+                d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z" />
+              <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0" />
+              <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5" />
+            </svg>
+          </div>
+          <h3>Your Website Goes Live in 48 Hours</h3>
+          <p>We build a custom website for your plumbing business — real design, real copywriting, mobile-optimized. You
+            review everything before launch.</p>
+        </div>
+        <div class="step-card animate-on-scroll" style="transition-delay:.2s">
+          <div class="step-header">
+            <div class="step-num">3</div><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#2B6CB0"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+            </svg>
+          </div>
+          <h3>The System Takes Over</h3>
+          <p>Instant lead response, missed-call text-back, and review requests all activate. Most clients see results
+            within 30 days.</p>
+        </div>
+      </div>
+      <p class="steps-summary animate-on-scroll"><span>→</span> Average client sees ROI within the first 30 days.</p>
+    </div>
+  </section>
+
+  <!-- Social Proof -->
+  <section class="proof">
+    <div class="container text-center">
+      <span class="section-label animate-on-scroll">Proof</span>
+      <h2 class="section-headline animate-on-scroll">Real plumbers. <strong>Real results.</strong> System pays for
+        itself.</h2>
+      <div class="testimonials-scroll" style="margin-top:40px">
+        <div class="testimonial-card animate-on-scroll">
+          <img src="testimonial-mike.png" alt="Mike R." class="testimonial-photo" loading="lazy">
+          <div class="stars">★★★★★</div>
+          <div class="quote-title">"System Paid for Itself in Less Than a Month"</div>
+          <p class="quote-body">Paid an agency $12,000 for a website that generated zero calls. This system cost me
+            nothing upfront and brought in 11 new jobs the first month. Between the instant lead responses and the
+            missed-call texts, I stopped losing emergency jobs to voicemail.</p>
+          <div class="name">Mike R.</div>
+          <div class="title">Reliant Plumbing & Drain · San Diego, CA</div>
+        </div>
+        <div class="testimonial-card animate-on-scroll" style="transition-delay:.1s">
+          <img src="testimonial-james.png" alt="James L." class="testimonial-photo" loading="lazy">
+          <div class="stars">★★★★★</div>
+          <div class="quote-title">"$41,000 in Jobs from Leads That Would've Been Lost"</div>
+          <p class="quote-body">The missed-call text-back alone changed everything. We were losing 8–10 calls a week to
+            voicemail. Now they get a text in under a minute. Last quarter we tracked $41K in jobs that came from those
+            recovered leads.</p>
+          <div class="name">James L.</div>
+          <div class="title">Valley Plumbing & Heating · Phoenix, AZ</div>
+        </div>
+        <div class="testimonial-card animate-on-scroll" style="transition-delay:.2s">
+          <img src="testimonial-danny.png" alt="Danny W." class="testimonial-photo" loading="lazy">
+          <div class="stars">★★★★★</div>
+          <div class="quote-title">"89 New 5-Star Reviews in Less Than 60 Days"</div>
+          <p class="quote-body">We went from 35 Google reviews to 124 in 30 days. The automatic review
+            requests alone
+            were worth it. We're ranking higher, getting more calls, and the website actually looks like a real company.
+            Should've done this years ago.</p>
+          <div class="name">Danny W.</div>
+          <div class="title">Bluewater Plumbing Group · Austin, TX</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who It's For / Not For -->
+  <section class="who-for">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-label animate-on-scroll">Is This For You?</span>
+        <h2 class="section-headline animate-on-scroll">Built for plumbers who want to <strong>grow.</strong> Not for
+          everyone.</h2>
+      </div>
+      <div class="who-grid">
+        <div class="who-col animate-on-scroll">
+          <h3 class="for-title">✅ This is for plumbing companies who:</h3>
+          <ul>
+            <li><span class="icon">✅</span> Want to grow but can't hire a receptionist (or trust the one they have)</li>
+            <li><span class="icon">✅</span> Know they're losing jobs to voicemail and slow follow-up</li>
+            <li><span class="icon">✅</span> Are tired of paying for marketing that doesn't show clear ROI</li>
+            <li><span class="icon">✅</span> Want more 5-star reviews but don't have time to chase customers for them
+            </li>
+            <li><span class="icon">✅</span> Are ready to let a system handle follow-up while they stay on the tools</li>
+            <li><span class="icon">✅</span> Can handle more work if the leads actually showed up</li>
+          </ul>
+        </div>
+        <div class="who-col animate-on-scroll" style="transition-delay:.15s">
+          <h3 class="not-title">❌ This is NOT for plumbing companies who:</h3>
+          <ul>
+            <li><span class="icon">❌</span> Are happy with 3–4 jobs a week and don't want more</li>
+            <li><span class="icon">❌</span> Think "word of mouth is enough" and aren't interested in ranking higher on
+              Google</li>
+            <li><span class="icon">❌</span> Want to personally answer every call and text themselves (even at 2am)</li>
+            <li><span class="icon">❌</span> Expect magic — this system works, but you still have to show up and do great
+              work</li>
+            <li><span class="icon">❌</span> Aren't willing to spend $297/month to stop losing $5K–$15K in leaked leads
+            </li>
+          </ul>
+        </div>
+      </div>
+      <p class="who-cta animate-on-scroll">If you read the "for" list and nodded at 3 or more — <a href="#book"
+          style="color:var(--cta-primary);font-weight:700;text-decoration:underline">we should talk</a>.</p>
+    </div>
+  </section>
+
+  <!-- Case Study -->
+  <section class="case-study-section">
+    <div class="container text-center">
+      <span class="section-label animate-on-scroll">Results</span>
+      <h2 class="section-headline animate-on-scroll">From leaking leads to <strong>$52K in 90 days.</strong></h2>
+      <div class="case-study animate-on-scroll">
+        <div class="cs-label">Case Study</div>
+        <div class="cs-name">Precision Plumbing Co. · Austin, TX</div>
+        <div class="cs-desc">Residential &amp; Commercial Plumbing</div>
+        <div class="cs-columns">
+          <div style="text-align:left">
+            <div class="cs-col-label before">Before</div>
+            <div class="cs-item bad">✗ Outdated website (built 2017)</div>
+            <div class="cs-item bad">✗ 6-second load time on mobile</div>
+            <div class="cs-item bad">✗ No instant response to leads</div>
+            <div class="cs-item bad">✗ Missed calls → no follow-up</div>
+            <div class="cs-item bad">✗ 52 Google reviews (stuck 2 yrs)</div>
+            <div class="cs-item bad">✗ 4–6 leads per week</div>
+            <div class="cs-item bad">✗ No idea which ads were working</div>
+          </div>
+          <div style="text-align:left">
+            <div class="cs-col-label after">After</div>
+            <div class="cs-item good">✓ Smart Website live in 48 hours</div>
+            <div class="cs-item good">✓ 1.8-second load time</div>
+            <div class="cs-item good">✓ Instant text response on every lead</div>
+            <div class="cs-item good">✓ Missed-call text-back active 24/7</div>
+            <div class="cs-item good">✓ 209 Google reviews (+47 in 30 days)</div>
+            <div class="cs-item good">✓ 14–22 qualified leads per week</div>
+            <div class="cs-item good">✓ Full dashboard showing every source</div>
+          </div>
+        </div>
+        <div class="cs-result">$52,000 in new jobs closed within 90 days.</div>
+        <div class="cs-result-sub">System paid for itself in the first 3 weeks.</div>
+      </div>
+      <a href="#book" class="cta-btn" style="margin-top:40px;display:inline-block">Book My Free Strategy Call →</a>
+      <p class="cta-micro">No contracts. No pressure. Just clarity on what's possible.</p>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="pricing">
+    <div class="container text-center">
+      <span class="section-label section-label-dark animate-on-scroll">What You Get</span>
+      <h2 class="section-headline animate-on-scroll">Everything you need. <strong>One system. One price.</strong></h2>
+      <p class="section-sub animate-on-scroll" style="max-width:600px;margin-left:auto;margin-right:auto">If you bought
+        these separately, you'd pay $1,400+/month. With us, it's $297.</p>
+      <div class="value-card animate-on-scroll">
+        <div class="value-row">
+          <div class="value-left"><span class="check">✓</span><span class="v-name">Premium Plumbing Website</span>
+            <div class="v-desc">Custom design, mobile-optimized</div>
+          </div>
+          <div class="value-right">$3,000–$5,000 value</div>
+        </div>
+        <div class="value-row">
+          <div class="value-left"><span class="check">✓</span><span class="v-name">Missed-Call Text-Back</span>
+            <div class="v-desc">Auto-text within 60 seconds, 24/7</div>
+          </div>
+          <div class="value-right">$147/mo</div>
+        </div>
+        <div class="value-row">
+          <div class="value-left"><span class="check">✓</span><span class="v-name">Instant Lead Response</span>
+            <div class="v-desc">Text-back on every form submission</div>
+          </div>
+          <div class="value-right">$97/mo</div>
+        </div>
+        <div class="value-row">
+          <div class="value-left"><span class="check">✓</span><span class="v-name">Reputation Management</span>
+            <div class="v-desc">Automated review requests + monitoring</div>
+          </div>
+          <div class="value-right">$199/mo</div>
+        </div>
+        <div class="value-row">
+          <div class="value-left"><span class="check">✓</span><span class="v-name">CRM &amp; Lead Dashboard</span>
+            <div class="v-desc">Every lead, every source, one place</div>
+          </div>
+          <div class="value-right">$197/mo</div>
+        </div>
+        <div class="value-row">
+          <div class="value-left"><span class="check">✓</span><span class="v-name">All-Channel Follow-Up</span>
+            <div class="v-desc">SMS, email, automated sequences</div>
+          </div>
+          <div class="value-right">$297/mo</div>
+        </div>
+      </div>
+      <div class="animate-on-scroll" style="max-width:600px;margin:0 auto">
+        <div class="price-reveal">
+          <div class="price-old">TOTAL IF BOUGHT SEPARATELY:<br>$3,000–$5,000 upfront + $937/mo</div>
+          <div class="price-label">Your Price</div>
+          <div class="price-amount">$0 Upfront + $297/mo</div>
+        </div>
+        <p class="price-roi">One emergency job can cover the entire year. Most clients see ROI in the first 30 days.</p>
+      </div>
+      <a href="#book" class="cta-btn" style="margin-top:40px;display:inline-block">Book My Free Strategy Call →</a>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-label animate-on-scroll">Straight Talk</span>
+        <h2 class="section-headline animate-on-scroll">You're skeptical. <strong>Good.</strong></h2>
+        <p class="section-sub animate-on-scroll" style="max-width:600px;margin-left:auto;margin-right:auto">Plumbers get
+          burned by marketing people all the time. Here's the truth.</p>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item open"><button class="faq-q"><span>"Why is the website actually free?"</span><span
+              class="faq-icon">+</span></button>
+          <div class="faq-a">
+            <p>We don't charge for the website build because we make our money on the monthly system fee. The website is
+              the foundation — the automation is what delivers results. We'd rather build you a $3K–$5K site for free
+              and earn your business long-term than charge you upfront and disappear.</p>
+          </div>
+        </div>
+        <div class="faq-item"><button class="faq-q"><span>"I've paid for marketing before. It didn't work."</span><span
+              class="faq-icon">+</span></button>
+          <div class="faq-a">
+            <p>Most plumber marketing fails because it's just a website with no system behind it. A pretty site without
+              instant lead response, missed-call text-back, and automated follow-up is like a truck with no engine. Our
+              system handles what happens AFTER someone finds you — that's where the money is.</p>
+          </div>
+        </div>
+        <div class="faq-item"><button class="faq-q"><span>"How does the system pay for itself in 30 days?"</span><span
+              class="faq-icon">+</span></button>
+          <div class="faq-a">
+            <p>The average emergency plumbing call is worth $500–$4,000+. Our system recovers leads you're currently
+              losing to voicemail, slow response, and competitors with more reviews. Most clients recover 3–5 extra jobs
+              in month one — far more than $297.</p>
+          </div>
+        </div>
+        <div class="faq-item"><button class="faq-q"><span>"What if it doesn't work?"</span><span
+              class="faq-icon">+</span></button>
+          <div class="faq-a">
+            <p>30-day money-back guarantee. If you don't see results within the first 30 days, we refund your money. No
+              questions. No hassle.</p>
+          </div>
+        </div>
+        <div class="faq-item"><button class="faq-q"><span>"I don't have time to deal with a new website."</span><span
+              class="faq-icon">+</span></button>
+          <div class="faq-a">
+            <p>You don't have to. We build everything — design, copy, setup. You do one 15-minute call, then review the
+              finished site. Total time: under 30 minutes.</p>
+          </div>
+        </div>
+        <div class="faq-item"><button class="faq-q"><span>"Do I need to learn new software?"</span><span
+              class="faq-icon">+</span></button>
+          <div class="faq-a">
+            <p>No. The system runs in the background. You'll get a simple dashboard, but you don't need to manage
+              anything. We handle the tech. You handle the wrenches.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="final-cta" id="book">
+    <div class="container text-center">
+      <h2 class="section-headline animate-on-scroll">Every week you wait, your <strong>competitor gets
+          stronger.</strong></h2>
+      <p class="section-sub animate-on-scroll"
+        style="color:var(--text-on-dark-muted);max-width:600px;margin-left:auto;margin-right:auto">$3K–$5K website.
+        Free. $297/mo for the full system. Results in 30 days or your money back.</p>
+      <div class="scarcity-line animate-on-scroll"><span class="pulse-dot"></span>Accepting 5 new plumbing companies
+        this month.</div>
+      <div class="form-card animate-on-scroll" id="form-card">
+        <h3>Book Your Free 15-Minute Strategy Call</h3>
+        <p class="form-sub">or text "PLUMBER" to <a href="tel:6198535003">(619) 853-5003</a></p>
+        <form id="lead-form" novalidate>
+          <div class="form-group"><label for="name">Your Name</label><input type="text" id="name" name="name"
+              placeholder="John" required></div>
+          <div class="form-group"><label for="phone">Phone Number</label><input type="tel" id="phone" name="phone"
+              placeholder="(555) 123-4567" required></div>
+          <button type="submit" class="cta-btn" id="submit-btn">Book My Free Call →</button>
+          <div class="form-error" id="form-error" style="display:none"></div>
+        </form>
+        <ul class="form-trust">
+          <li><span class="check">✓</span> We respond within 1 hour (usually faster)</li>
+          <li><span class="check">✓</span> 15-minute call, no sales pressure</li>
+          <li><span class="check">✓</span> Free custom growth plan even if we don't work together</li>
+          <li><span class="check">✓</span> Results within 30 days or your money back</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p><strong>Omnipresent</strong> · Built for Plumbing Companies</p>
+    <p><a href="tel:6198535003">(619) 853-5003</a> · <a
+        href="https://www.google.com/search?q=omnipresent+92101&oq=omnipresent+92101&gs_lcrp=EgZjaHJvbWUqBggAEEUYOzIGCAAQRRg7MgoIARAAGLEDGIAEMgcIAhAAGIAEMgcIAxAAGIAEMgcIBBAuGIAEMgcIBRAAGIAEMgcIBhAAGIAEMgcIBxAAGIAEMgcICBAAGIAEMgcICRAAGIAE0gEIMjQ5OWowajGoAgCwAgA&sourceid=chrome&ie=UTF-8"
+        target="_blank" rel="noopener">See our 340+ Google reviews →</a></p>
+    <p>© 2026 Omnipresent</p>
+  </footer>
+
+  <!-- Mobile Sticky CTA -->
+  <div class="sticky-cta" id="sticky-cta"><a href="#book" class="cta-btn">Book My Free Call →</a></div>
+
+  <script>
+    // FAQ Accordion
+    document.querySelectorAll('.faq-q').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        const wasOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!wasOpen) item.classList.add('open');
+      });
+    });
+
+    // Scroll Animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+
+    // Sticky CTA
+    const heroCta = document.getElementById('hero-cta');
+    const stickyCta = document.getElementById('sticky-cta');
+    if (heroCta && stickyCta) {
+      const stickyObs = new IntersectionObserver(([entry]) => {
+        stickyCta.classList.toggle('show', !entry.isIntersecting);
+      }, { threshold: 0 });
+      stickyObs.observe(heroCta);
+    }
+
+    // Stat Counter
+    function animateCounter(el) {
+      const target = parseInt(el.dataset.target);
+      const prefix = el.dataset.prefix || '';
+      const suffix = el.dataset.suffix || '';
+      const duration = 1500;
+      const start = performance.now();
+      function update(now) {
+        const elapsed = now - start;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const current = Math.floor(eased * target);
+        el.textContent = prefix + current.toLocaleString() + suffix;
+        if (progress < 1) requestAnimationFrame(update);
+      }
+      requestAnimationFrame(update);
+    }
+    const statObs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          statObs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    document.querySelectorAll('.stat-num[data-target]').forEach(el => statObs.observe(el));
+
+    // Form
+    const form = document.getElementById('lead-form');
+    const formCard = document.getElementById('form-card');
+    const formError = document.getElementById('form-error');
+    const submitBtn = document.getElementById('submit-btn');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      formError.style.display = 'none';
+      const name = form.name.value.trim();
+      const phone = form.phone.value.replace(/\D/g, '');
+      if (!name) { formError.textContent = 'Please enter your name.'; formError.style.display = 'block'; return; }
+      if (phone.length < 10) { formError.textContent = 'Please enter a valid phone number.'; formError.style.display = 'block'; return; }
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+      try {
+        await fetch('https://hooks.omnipresent.com/lead', {
+          method: 'POST', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, phone })
+        });
+      } catch (err) { /* still show success for demo */ }
+      formCard.querySelector('form').style.display = 'none';
+      formCard.querySelector('.form-trust').style.display = 'none';
+      const success = document.createElement('div');
+      success.className = 'form-success';
+      success.innerHTML = '<div class="check-lg">✓</div><h3>You\'re in. We\'ll call you within 1 hour.</h3><p>Check your phone — you\'ll get a text from us shortly.</p>';
+      formCard.appendChild(success);
+    });
+  </script>
+</body>
+
+</html>
