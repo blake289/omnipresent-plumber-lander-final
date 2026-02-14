@@ -266,7 +266,7 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 16px 24px;
-      margin-top: 28px
+      margin-top: 36px
     }
 
     .hero-trust span {
@@ -891,7 +891,8 @@
     .final-cta {
       background: var(--bg-dark);
       padding: 64px 0;
-      color: #FFF
+      color: #FFF;
+      scroll-margin-top: 0px
     }
 
     .final-cta .section-headline {
@@ -903,81 +904,95 @@
       font-size: 20px;
       color: var(--urgency-bg);
       text-align: center;
-      margin-top: 12px;
+      margin-top: 20px;
+      margin-bottom: 12px;
       background: #FFF;
       display: inline-block;
-      padding: 14px 28px;
+      padding: 20px 40px;
       border-radius: var(--card-radius)
     }
 
     .form-card {
-      background: #FFF;
-      border-radius: 16px;
-      padding: 32px;
-      box-shadow: var(--shadow-lg);
-      max-width: 480px;
+      background: #141921;
+      border-radius: 20px;
+      padding: 40px 36px;
+      box-shadow: 0 0 60px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.06);
+      max-width: 520px;
       margin: 32px auto 0
     }
 
     .form-card h3 {
       font-weight: 700;
-      font-size: 22px;
+      font-size: 34px;
       text-align: center;
       margin-bottom: 8px;
-      color: var(--text-primary)
+      color: #FFF
     }
 
     .form-card .form-sub {
-      font-size: 16px;
-      color: var(--text-primary);
-      text-align: center;
-      margin-bottom: 24px
+      font-size: 15px;
+      color: rgba(255, 255, 255, 0.5);
+      text-align: left;
+      margin-bottom: 28px
     }
 
     .form-card .form-sub a {
-      color: var(--accent-blue)
+      color: #c0c0c0;
+      text-decoration: underline
     }
 
     .form-group {
-      margin-bottom: 16px
+      margin-bottom: 20px
     }
 
     .form-group label {
       display: block;
-      font-weight: 500;
-      font-size: 13px;
-      color: var(--text-muted);
+      font-weight: 600;
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.5);
       text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 6px
+      letter-spacing: 0.1em;
+      margin-bottom: 8px
     }
 
     .form-group input {
       width: 100%;
-      padding: 14px 16px;
-      border: 1px solid var(--border-light);
-      border-radius: var(--input-radius);
-      font-size: 16px;
-      font-family: var(--font-body)
+      padding: 16px 18px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      font-size: 17px;
+      font-family: var(--font-body);
+      background: rgba(255, 255, 255, 0.06);
+      color: #FFF;
+      transition: border-color .2s ease
+    }
+
+    .form-group input::placeholder {
+      color: rgba(255, 255, 255, 0.35)
     }
 
     .form-group input:focus {
       outline: none;
-      border-color: var(--accent-blue)
+      border-color: rgba(255, 255, 255, 0.25);
+      background: rgba(255, 255, 255, 0.08)
     }
 
     .form-card .cta-btn {
-      margin-top: 8px
+      margin-top: 8px;
+      width: 100%;
+      font-size: 19px;
+      padding: 18px 32px;
+      border-radius: 50px
     }
 
     .form-trust {
-      margin-top: 20px
+      margin-top: 24px
     }
 
     .form-trust li {
-      font-size: 13px;
-      color: var(--text-primary);
-      margin-bottom: 6px;
+      font-size: 17px;
+      color: rgba(255, 255, 255, 0.85);
+      margin-bottom: 10px;
       list-style: none
     }
 
@@ -1085,7 +1100,7 @@
       }
 
       .hero {
-        padding: 72px 0 64px
+        padding: 60px 0 64px
       }
 
       .hero h1 {
@@ -1242,7 +1257,7 @@
       }
 
       .form-card h3 {
-        font-size: 24px
+        font-size: 28px
       }
 
       .form-trust li {
@@ -1253,9 +1268,13 @@
     @media(min-width:1024px) {
       .hero-content {
         display: grid;
-        grid-template-columns: 3fr 2fr;
+        grid-template-columns: 5fr 6fr;
         gap: 40px;
         align-items: center
+      }
+
+      .hero-trust {
+        justify-content: flex-start
       }
 
       .hero-img {
@@ -1264,19 +1283,11 @@
 
       .hero-mockup {
         width: 100%;
-        max-width: 480px;
-        aspect-ratio: 480/540;
-        background: linear-gradient(135deg, #1a365d, #2B6CB0);
-        border-radius: 24px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #FFF;
-        font-size: 18px;
-        font-weight: 600;
-        text-align: center;
-        padding: 40px;
-        box-shadow: var(--shadow-lg)
+        height: auto;
+        object-fit: contain;
+        border-radius: 0;
+        background: transparent;
+        padding: 0
       }
 
       .sticky-cta {
@@ -1300,8 +1311,7 @@
             free.</h1>
           <p class="hero-sub">We build you a website that turns searches into booked calls — then automate your lead
             follow-up, missed-call texts, and review requests. You stay on the job. The system handles the rest.</p>
-          <a href="#book" class="cta-btn" id="hero-cta"
-            style="display:block;width:fit-content;margin-left:auto;margin-right:auto">Book My Free Call →</a>
+          <a href="#book" class="cta-btn" id="hero-cta" style="display:block;width:fit-content">Book My Free Call →</a>
           <div class="hero-trust">
             <span><span class="check">✓</span> $0 to start</span>
             <span><span class="check">✓</span> No contracts</span>
@@ -1309,7 +1319,20 @@
           </div>
         </div>
         <div class="hero-img">
-          <div class="hero-mockup">Your Custom Plumber Website — Live in 48 Hours</div>
+          <div class="hero-mockup"
+            style="background:#0a1628;border-radius:16px;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;cursor:pointer;position:relative;box-shadow:0 8px 32px rgba(0,0,0,0.3)">
+            <div
+              style="width:80px;height:80px;border-radius:50%;background:rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;border:2px solid rgba(255,255,255,0.3);transition:transform .2s ease, background .2s ease"
+              onmouseover="this.style.transform='scale(1.1)';this.style.background='rgba(255,255,255,0.25)'"
+              onmouseout="this.style.transform='scale(1)';this.style.background='rgba(255,255,255,0.15)'">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="#FFF">
+                <polygon points="6 3 20 12 6 21 6 3" />
+              </svg>
+            </div>
+            <span
+              style="position:absolute;bottom:20px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,0.6);font-size:14px;font-weight:500;letter-spacing:1px;text-transform:uppercase">Watch
+              How It Works</span>
+          </div>
         </div>
       </div>
     </div>
@@ -1701,7 +1724,7 @@
           burned by marketing people all the time. Here's the truth.</p>
       </div>
       <div class="faq-list">
-        <div class="faq-item open"><button class="faq-q"><span>"Why is the website actually free?"</span><span
+        <div class="faq-item"><button class="faq-q"><span>"Why is the website actually free?"</span><span
               class="faq-icon">+</span></button>
           <div class="faq-a">
             <p>We don't charge for the website build because we make our money on the monthly system fee. The website is
@@ -1756,18 +1779,30 @@
       <h2 class="section-headline animate-on-scroll">Every week you wait, your <strong>competitor gets
           stronger.</strong></h2>
       <p class="section-sub animate-on-scroll"
-        style="color:var(--text-on-dark-muted);max-width:600px;margin-left:auto;margin-right:auto;text-align:center">
+        style="color:rgba(255,255,255,0.85);max-width:600px;margin-left:auto;margin-right:auto;text-align:center">
         $3K–$5K website.
         Free. $297/mo for the full system. Results in 30 days or your money back.</p>
-      <div class="scarcity-line animate-on-scroll"><span class="pulse-dot"></span>Accepting 5 New Plumbing Companies
-        This Month<span class="pulse-dot" style="margin-left:6px;margin-right:0"></span></div>
+      <div class="scarcity-line animate-on-scroll"><span class="pulse-dot"></span>ACCEPTING 5 NEW PLUMBING COMPANIES
+        THIS MONTH<span class="pulse-dot" style="margin-left:6px;margin-right:0"></span></div>
       <div class="form-card animate-on-scroll" id="form-card">
-        <iframe src="https://link.omnipresent.app/widget/booking/SxpR3xGWSQxBDYeHsUg7"
-          style="width: 100%;border:none;overflow: hidden;min-height:600px" scrolling="no"
-          id="SxpR3xGWSQxBDYeHsUg7_1771037410334"></iframe>
-        <script src="https://link.omnipresent.app/js/form_embed.js" type="text/javascript"></script>
-        <p class="form-sub" style="font-weight:700;font-size:20px;margin-top:24px"><a
-            href="sms:+16198535003?body=PLUMBER" style="color:var(--accent-blue);text-decoration:underline">Tap to text
+        <h3>Book Your Free Call</h3>
+
+        <form id="lead-form" action="https://hooks.omnipresent.com/lead" method="POST">
+          <div class="form-group">
+            <label for="name">YOUR NAME</label>
+            <input type="text" id="name" name="name" placeholder="John" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">PHONE NUMBER</label>
+            <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567" required>
+          </div>
+          <div id="form-error" style="color:#e53e3e;font-size:14px;margin-bottom:12px;display:none"></div>
+          <button type="submit" class="cta-btn" id="submit-btn" style="display:block;width:100%">Book My Free Call
+            →</button>
+        </form>
+        <p class="form-sub" style="font-weight:700;font-size:20px;margin-top:24px;text-align:center"><span
+            style="color:rgba(255,255,255,0.4)">OR</span><br><a href="sms:+16198535003?body=PLUMBER"
+            style="color:#c0c0c0;text-decoration:underline">Tap to text
             "PLUMBER" to (619) 853-5003</a></p>
         <ul class="form-trust">
           <li><span class="check">✓</span> We respond within 1 hour (usually faster)</li>
@@ -1781,7 +1816,7 @@
 
   <!-- Footer -->
   <footer class="site-footer">
-    <p><strong>Omnipresent</strong> · Built by Blake Ernst, who's helped 1,200+ local businesses get more calls</p>
+    <p><strong>Omnipresent</strong> · Built by Blake Ernst, who's helped 1,200+ local businesses get customers</p>
     <p><a href="tel:6198535003">(619) 853-5003</a> · <a
         href="https://www.google.com/search?q=omnipresent+92101&oq=omnipresent+92101&gs_lcrp=EgZjaHJvbWUqBggAEEUYOzIGCAAQRRg7MgoIARAAGLEDGIAEMgcIAhAAGIAEMgcIAxAAGIAEMgcIBBAuGIAEMgcIBRAAGIAEMgcIBhAAGIAEMgcIBxAAGIAEMgcICBAAGIAEMgcICRAAGIAE0gEIMjQ5OWowajGoAgCwAgA&sourceid=chrome&ie=UTF-8"
         target="_blank" rel="noopener">See our 340+ Google reviews →</a></p>
