@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Omnipresent | Smart Websites for Plumbing Companies</title>
   <meta name="description"
-    content="We build plumbing companies a premium website in 48 hours — free. Plus instant lead response, missed-call text-back, and automated reviews. $297/mo. Results in 30 days or your money back.">
+    content="We build plumbing companies a premium website in 48 hours — free. Plus instant lead response, missed-call text-back, and automated reviews. $497/mo. Results in 30 days or your money back.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
@@ -46,6 +46,7 @@
       --container-max: 1440px;
       --container-padding: 24px;
       --card-radius: 16px;
+      --card-radius-lg: 20px;
       --btn-radius: 100px;
       --input-radius: 12px
     }
@@ -69,8 +70,7 @@
       color: var(--text-primary);
       background: var(--bg-white);
       line-height: 1.7;
-      overflow-x: hidden;
-      padding-top: 38px
+      overflow-x: hidden
     }
 
     img {
@@ -120,8 +120,9 @@
       font-weight: 300;
       font-size: 30px;
       line-height: 1.25;
-      margin-bottom: 16px;
-      letter-spacing: -0.02em
+      margin-bottom: 20px;
+      letter-spacing: -0.02em;
+      text-wrap: balance
     }
 
     .section-headline strong,
@@ -136,7 +137,7 @@
       line-height: 1.65;
       color: var(--text-secondary);
       margin-bottom: 32px;
-      text-align: left
+      text-align: center
     }
 
     .cta-btn {
@@ -172,7 +173,7 @@
 
     /* Urgency Bar */
     .urgency-bar {
-      position: fixed;
+      position: sticky;
       top: 0;
       left: 0;
       right: 0;
@@ -184,7 +185,25 @@
       letter-spacing: 0.08em;
       padding: 10px 16px;
       text-align: center;
-      z-index: 9999
+      z-index: 9999;
+      overflow: hidden
+    }
+
+    .urgency-bar::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 60%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.28), transparent);
+      animation: bannerShine 1.2s 0.5s ease-out forwards;
+      pointer-events: none
+    }
+
+    @keyframes bannerShine {
+      0% { left: -60% }
+      100% { left: 120% }
     }
 
     /* Animations */
@@ -229,12 +248,12 @@
 
     .hero-label {
       font-weight: 600;
-      font-size: 12px;
+      font-size: 15px;
       text-transform: uppercase;
       letter-spacing: 0.1em;
       color: var(--accent-blue);
       background: rgba(26, 115, 232, 0.08);
-      padding: 6px 16px;
+      padding: 8px 20px;
       border-radius: 100px;
       display: inline-block;
       margin-bottom: 20px
@@ -247,7 +266,8 @@
       line-height: 1.2;
       letter-spacing: -0.02em;
       color: var(--text-primary);
-      margin-bottom: 20px
+      margin-bottom: 20px;
+      text-wrap: balance
     }
 
     .hero h1 strong {
@@ -263,7 +283,7 @@
 
     .hero-trust {
       display: flex;
-      flex-wrap: nowrap;
+      flex-wrap: wrap;
       justify-content: center;
       gap: 16px 24px;
       margin-top: 36px
@@ -330,7 +350,7 @@
       line-height: 1.75;
       color: var(--text-on-dark-muted);
       max-width: 640px;
-      margin: 48px auto 56px;
+      margin: 48px auto;
       text-align: left
     }
 
@@ -419,7 +439,7 @@
       font-weight: 600;
       font-size: 18px;
       margin-bottom: 8px;
-      text-align: center
+      text-align: left
     }
 
     .benefit-card p {
@@ -541,7 +561,7 @@
       color: #FBBF24;
       font-size: 16px;
       margin-bottom: 12px;
-      text-align: center
+      text-align: left
     }
 
     .testimonial-card .quote-title {
@@ -549,7 +569,7 @@
       font-size: 18px;
       color: var(--text-primary);
       margin-bottom: 12px;
-      text-align: center
+      text-align: left
     }
 
     .testimonial-card .quote-body {
@@ -673,7 +693,7 @@
     .case-study {
       background: #FFF;
       border: 1px solid var(--border-light);
-      border-radius: 16px;
+      border-radius: var(--card-radius);
       padding: 32px;
       box-shadow: var(--shadow-md);
       max-width: 800px;
@@ -771,8 +791,8 @@
     .value-card {
       background: var(--bg-card-dark);
       border: 1px solid var(--border-dark);
-      border-radius: 18px;
-      padding: 35px;
+      border-radius: var(--card-radius-lg);
+      padding: 36px;
       max-width: 660px;
       margin: 40px auto 0
     }
@@ -817,11 +837,13 @@
     }
 
     .price-reveal {
-      background: linear-gradient(135deg, #16803C, #22A34D);
-      border-radius: 12px;
-      padding: 24px 32px;
+      background: linear-gradient(135deg, #B91C1C, #DC2626, #EF4444);
+      border-radius: 16px;
+      padding: 32px 36px;
       text-align: center;
-      margin-top: 24px
+      margin-top: 24px;
+      box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1) inset, 0 8px 32px rgba(185, 28, 28, 0.35);
+      border: 1px solid rgba(255, 255, 255, 0.12)
     }
 
     .price-old {
@@ -844,6 +866,35 @@
       font-weight: 700;
       font-size: 40px;
       color: #FFF
+    }
+
+    .price-annual {
+      font-size: 15px;
+      color: var(--text-on-dark-muted);
+      text-align: center;
+      margin-top: 16px;
+      padding: 14px 20px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.04)
+    }
+
+    .price-annual strong {
+      color: #FFF
+    }
+
+    .price-annual-badge {
+      display: inline-block;
+      background: rgba(0, 200, 83, 0.15);
+      color: var(--green-check);
+      font-weight: 600;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 3px 10px;
+      border-radius: 100px;
+      margin-right: 8px;
+      vertical-align: middle
     }
 
     .price-roi {
@@ -918,7 +969,7 @@
       background: var(--bg-dark);
       padding: 64px 0;
       color: #FFF;
-      scroll-margin-top: 0px
+      scroll-margin-top: 48px
     }
 
     .final-cta .section-headline {
@@ -930,6 +981,7 @@
       font-size: 20px;
       color: var(--urgency-bg);
       text-align: center;
+      letter-spacing: 0.06em;
       margin-top: 20px;
       margin-bottom: 12px;
       background: #FFF;
@@ -940,8 +992,8 @@
 
     .form-card {
       background: #141921;
-      border-radius: 20px;
-      padding: 40px 36px;
+      border-radius: var(--card-radius-lg);
+      padding: 40px;
       box-shadow: 0 0 60px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.06);
       max-width: 520px;
       margin: 32px auto 0
@@ -949,7 +1001,7 @@
 
     .form-card h3 {
       font-weight: 700;
-      font-size: 34px;
+      font-size: 28px;
       text-align: center;
       margin-bottom: 8px;
       color: #FFF
@@ -1004,7 +1056,7 @@
     }
 
     .form-card .cta-btn {
-      margin-top: 8px;
+      margin-top: 32px;
       width: 100%;
       font-size: 19px;
       padding: 18px 32px;
@@ -1016,7 +1068,7 @@
     }
 
     .form-trust li {
-      font-size: 17px;
+      font-size: 14px;
       color: rgba(255, 255, 255, 0.85);
       margin-bottom: 10px;
       list-style: none
@@ -1101,6 +1153,70 @@
     .sticky-cta .cta-btn {
       padding: 14px;
       font-size: 16px
+    }
+
+    /* Play button hover + pulse glow */
+    .play-circle {
+      transition: transform .2s ease, background .2s ease;
+      position: relative
+    }
+
+    .play-circle::before,
+    .play-circle::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      border: 2px solid rgba(255, 255, 255, 0.4);
+      animation: playPulse 2s ease-out infinite
+    }
+
+    .play-circle::after {
+      animation-delay: 1s
+    }
+
+    @keyframes playPulse {
+      0% {
+        width: 100%;
+        height: 100%;
+        opacity: 0.6
+      }
+      100% {
+        width: 180%;
+        height: 180%;
+        opacity: 0
+      }
+    }
+
+    .hero-mockup:hover .play-circle {
+      transform: scale(1.1);
+      background: rgba(255, 255, 255, 0.25) !important
+    }
+
+    /* Focus-visible */
+    :focus-visible {
+      outline: 2px solid var(--accent-blue);
+      outline-offset: 2px
+    }
+
+    .cta-btn:focus-visible {
+      outline: 2px solid var(--accent-blue);
+      outline-offset: 3px
+    }
+
+    .faq-q:focus-visible {
+      outline: 2px solid var(--accent-blue);
+      outline-offset: 2px;
+      border-radius: 4px
+    }
+
+    .form-group input:focus-visible {
+      outline: 2px solid var(--accent-blue-light);
+      outline-offset: 1px
     }
 
     /* Desktop */
@@ -1283,19 +1399,19 @@
       }
 
       .form-card h3 {
-        font-size: 28px
+        font-size: 34px
       }
 
       .form-trust li {
-        font-size: 14px
+        font-size: 16px
       }
     }
 
     @media(min-width:1024px) {
       .hero-content {
         display: grid;
-        grid-template-columns: 7fr 6fr;
-        gap: 40px;
+        grid-template-columns: 8fr 5fr;
+        gap: 48px;
         align-items: center
       }
 
@@ -1309,7 +1425,7 @@
         justify-content: center;
         align-items: center;
         margin-top: -60px;
-        transform: translateX(85px)
+        transform: translateX(-75px)
       }
 
       .hero-mockup {
@@ -1319,7 +1435,7 @@
         border-radius: 0;
         background: transparent;
         padding: 0;
-        transform: scale(1.28);
+        transform: scale(1.69);
         transform-origin: center center
       }
 
@@ -1333,19 +1449,20 @@
 <body>
 
   <!-- Urgency Bar -->
-  <div class="urgency-bar">February spots: <strong>3 of 5 remaining</strong> — we only take 5 plumbing companies per
-    month</div>
+  <div class="urgency-bar" role="banner"><p>February spots: <strong>3 of 5 remaining</strong> — we only take 5 plumbing companies per
+    month</p></div>
 
   <!-- Hero -->
   <header class="hero">
     <div class="container">
       <div class="hero-content">
-        <div class="hero-text" style="text-align:center">
-          <h1 style="text-align:left">You're losing <strong>$5K–$15K</strong><br><strong>a month</strong> in jobs you
+        <div class="hero-text">
+          <span class="hero-label">Built Exclusively for Plumbing Companies</span>
+          <h1>You're losing <strong>$5K–$15K</strong> <strong>a<br>month</strong> in jobs you
             never<br>even knew
             about.<span style="display:block;margin-top:28px">We fix that. In <strong>30 days.</strong><br>Or you don't
               pay.</span></h1>
-          <p class="hero-sub" style="text-align:left">Right now, leads are calling you and getting voicemail. They're
+          <p class="hero-sub">Right now, leads are calling you and getting voicemail. They're
             finding you on Google and hitting "back." Every missed call, every lost form fill — that's money in your
             competitor's pocket. We build plumbing companies a system that catches every lead automatically. You stay on
             the job. The system handles the rest.</p>
@@ -1360,11 +1477,9 @@
         <div class="hero-img">
           <div class="hero-mockup"
             style="background:#0a1628;border-radius:16px;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;cursor:pointer;position:relative;box-shadow:0 8px 32px rgba(0,0,0,0.3)">
-            <div
-              style="width:80px;height:80px;border-radius:50%;background:rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;border:2px solid rgba(255,255,255,0.3);transition:transform .2s ease, background .2s ease"
-              onmouseover="this.style.transform='scale(1.1)';this.style.background='rgba(255,255,255,0.25)'"
-              onmouseout="this.style.transform='scale(1)';this.style.background='rgba(255,255,255,0.15)'">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="#FFF">
+            <div class="play-circle"
+              style="width:80px;height:80px;border-radius:50%;background:rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;border:2px solid rgba(255,255,255,0.3)">
+              <svg aria-hidden="true" width="32" height="32" viewBox="0 0 24 24" fill="#FFF">
                 <polygon points="6 3 20 12 6 21 6 3" />
               </svg>
             </div>
@@ -1386,8 +1501,8 @@
           <div class="stat-label">Businesses Served</div>
         </div>
         <div class="animate-on-scroll" style="transition-delay:.1s">
-          <div class="stat-num" data-target="47" data-prefix="$" data-suffix="M+">0</div>
-          <div class="stat-label">In Jobs Booked for Plumbers</div>
+          <div class="stat-num">4.9 Stars</div>
+          <div class="stat-label">On Google</div>
         </div>
         <div class="animate-on-scroll" style="transition-delay:.2s">
           <div class="stat-num" data-target="340" data-prefix="" data-suffix="+">0</div>
@@ -1464,7 +1579,7 @@
         your competitor if you'd missed the call.</p>
       <div class="vision-cards">
         <div class="vision-card animate-on-scroll">
-          <div style="text-align:center;margin-bottom:16px"><svg width="40" height="40" viewBox="0 0 24 24" fill="none"
+          <div style="text-align:center;margin-bottom:16px"><svg aria-hidden="true" width="40" height="40" viewBox="0 0 24 24" fill="none"
               stroke="#2B6CB0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path
                 d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
@@ -1477,7 +1592,7 @@
               style="color:#c53030">$4,000 job</span> on your calendar — not wondering why the phone didn't ring.</p>
         </div>
         <div class="vision-card animate-on-scroll" style="transition-delay:.1s">
-          <div style="text-align:center;margin-bottom:16px"><svg width="40" height="40" viewBox="0 0 24 24" fill="none"
+          <div style="text-align:center;margin-bottom:16px"><svg aria-hidden="true" width="40" height="40" viewBox="0 0 24 24" fill="none"
               stroke="#2B6CB0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <polygon
                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
@@ -1493,7 +1608,7 @@
             long.</p>
         </div>
         <div class="vision-card animate-on-scroll" style="transition-delay:.2s">
-          <div style="text-align:center;margin-bottom:16px"><svg width="40" height="40" viewBox="0 0 24 24" fill="none"
+          <div style="text-align:center;margin-bottom:16px"><svg aria-hidden="true" width="40" height="40" viewBox="0 0 24 24" fill="none"
               stroke="#2B6CB0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
               <line x1="8" y1="21" x2="16" y2="21" />
@@ -1507,7 +1622,7 @@
             your jobs are coming from. For the first time, you know <strong>what's actually working.</strong></p>
         </div>
         <div class="vision-card animate-on-scroll" style="transition-delay:.3s">
-          <div style="text-align:center;margin-bottom:16px"><svg width="40" height="40" viewBox="0 0 24 24" fill="none"
+          <div style="text-align:center;margin-bottom:16px"><svg aria-hidden="true" width="40" height="40" viewBox="0 0 24 24" fill="none"
               stroke="#2B6CB0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path
                 d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
@@ -1534,7 +1649,7 @@
         website redesign. It's a <strong>complete system</strong> that works while you're on the job.</p>
       <div class="benefits-grid">
         <div class="benefit-card animate-on-scroll">
-          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#2B6CB0" stroke-width="2"
+          <svg aria-hidden="true" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#2B6CB0" stroke-width="2"
             stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="10" />
             <line x1="2" y1="12" x2="22" y2="12" />
@@ -1546,7 +1661,7 @@
               calls.</strong> We build it free because the system behind it is where the results come from.</p>
         </div>
         <div class="benefit-card animate-on-scroll" style="transition-delay:.1s">
-          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#2B6CB0" stroke-width="2"
+          <svg aria-hidden="true" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#2B6CB0" stroke-width="2"
             stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
           </svg>
@@ -1556,7 +1671,7 @@
             at 2am. <strong>No lead goes cold.</strong></p>
         </div>
         <div class="benefit-card animate-on-scroll" style="transition-delay:.2s">
-          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#2B6CB0" stroke-width="2"
+          <svg aria-hidden="true" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#2B6CB0" stroke-width="2"
             stroke-linecap="round" stroke-linejoin="round">
             <polygon
               points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
@@ -1567,7 +1682,7 @@
             More calls.</p>
         </div>
         <div class="benefit-card animate-on-scroll" style="transition-delay:.3s">
-          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#2B6CB0" stroke-width="2"
+          <svg aria-hidden="true" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#2B6CB0" stroke-width="2"
             stroke-linecap="round" stroke-linejoin="round">
             <line x1="18" y1="20" x2="18" y2="10" />
             <line x1="12" y1="20" x2="12" y2="4" />
@@ -1578,7 +1693,7 @@
           </p>
         </div>
       </div>
-      <p class="guarantee-line animate-on-scroll" style="margin-top:15px">✓ Results in 30 days or your money back.</p>
+      <p class="guarantee-line animate-on-scroll" style="margin-top:32px">✓ Results in 30 days or your money back.</p>
     </div>
   </section>
 
@@ -1592,7 +1707,7 @@
       <div class="steps-grid">
         <div class="step-card animate-on-scroll">
           <div class="step-header">
-            <div class="step-num">1</div><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#2B6CB0"
+            <div class="step-num">1</div><svg aria-hidden="true" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#2B6CB0"
               stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path
                 d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
@@ -1604,7 +1719,7 @@
         </div>
         <div class="step-card animate-on-scroll" style="transition-delay:.1s">
           <div class="step-header">
-            <div class="step-num">2</div><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#2B6CB0"
+            <div class="step-num">2</div><svg aria-hidden="true" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#2B6CB0"
               stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z" />
               <path
@@ -1621,7 +1736,7 @@
         </div>
         <div class="step-card animate-on-scroll" style="transition-delay:.2s">
           <div class="step-header">
-            <div class="step-num">3</div><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#2B6CB0"
+            <div class="step-num">3</div><svg aria-hidden="true" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#2B6CB0"
               stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
             </svg>
@@ -1716,7 +1831,7 @@
             <li><span class="icon">❌</span> Want to personally answer every call and text themselves (even at 2am)</li>
             <li><span class="icon">❌</span> Expect magic — this system works, but you still have to show up and do great
               work</li>
-            <li><span class="icon">❌</span> Think $297/month is "too expensive" but don't blink at losing $5K+ in missed
+            <li><span class="icon">❌</span> Think $497/month is "too expensive" but don't blink at losing $5K+ in missed
               jobs every month
             </li>
           </ul>
@@ -1774,7 +1889,7 @@
       <h2 class="section-headline animate-on-scroll">One emergency job covers the entire year. <strong>Here's what you
           get.</strong></h2>
       <p class="section-sub animate-on-scroll" style="max-width:600px;margin-left:auto;margin-right:auto">If you bought
-        these separately, you'd pay $1,400+/month. With us, it's $297.</p>
+        these separately, you'd pay $1,600+/month. With us, it's $497.</p>
       <div class="value-card animate-on-scroll">
         <div class="value-row">
           <div class="value-left"><span class="check">✓</span><span class="v-name">Premium Plumbing Website</span>
@@ -1810,18 +1925,22 @@
           <div class="value-left"><span class="check">✓</span><span class="v-name">All-Channel Follow-Up</span>
             <div class="v-desc">SMS, email, automated sequences</div>
           </div>
-          <div class="value-right">$297/mo</div>
+          <div class="value-right">$497/mo</div>
         </div>
       </div>
       <div class="animate-on-scroll" style="max-width:600px;margin:0 auto">
         <div class="price-reveal">
-          <div class="price-old">TOTAL IF BOUGHT SEPARATELY:<br>$3,000–$5,000 upfront + $937/mo</div>
+          <div class="price-old">TOTAL IF BOUGHT SEPARATELY:<br>$3,000–$5,000 upfront + $1,137/mo</div>
           <div class="price-label">Your Price</div>
-          <div class="price-amount">$0 Upfront + $297/mo</div>
+          <div class="price-amount">$0 Upfront + $497/mo</div>
+        </div>
+        <div class="price-annual">
+          <span class="price-annual-badge">SAVE $1,200/yr</span>
+          Or go annual: <strong>$397/mo</strong> ($4,764/yr) — locked in, no increases.
         </div>
         <p class="price-roi">One emergency job can cover the entire year. Most clients see ROI in the first 30 days.</p>
       </div>
-      <a href="#book" class="cta-btn" style="margin-top:40px;display:inline-block">Book My Free Call →</a>
+      <a href="#book" class="cta-btn" style="margin-top:56px;display:inline-block">Book My Free Call →</a>
     </div>
   </section>
 
@@ -1835,7 +1954,7 @@
           burned by marketing people all the time. Here's the truth.</p>
       </div>
       <div class="faq-list">
-        <div class="faq-item"><button class="faq-q"><span>"I've paid for marketing before. It didn't work."</span><span
+        <div class="faq-item"><button class="faq-q" aria-expanded="false"><span>"I've paid for marketing before. It didn't work."</span><span
               class="faq-icon">+</span></button>
           <div class="faq-a">
             <p>Most plumber marketing fails because it's just a website with no system behind it. A pretty site without
@@ -1843,14 +1962,14 @@
               what happens AFTER someone finds you — that's where the money is.</p>
           </div>
         </div>
-        <div class="faq-item"><button class="faq-q"><span>"What if it doesn't work?"</span><span
+        <div class="faq-item"><button class="faq-q" aria-expanded="false"><span>"What if it doesn't work?"</span><span
               class="faq-icon">+</span></button>
           <div class="faq-a">
             <p>30-day money-back guarantee. If you don't see results within the first 30 days, we refund your money. No
               questions. No hassle.</p>
           </div>
         </div>
-        <div class="faq-item"><button class="faq-q"><span>"Why is the website actually free?"</span><span
+        <div class="faq-item"><button class="faq-q" aria-expanded="false"><span>"Why is the website actually free?"</span><span
               class="faq-icon">+</span></button>
           <div class="faq-a">
             <p>We don't charge for the website build because we make our money on the monthly system fee. The website is
@@ -1858,15 +1977,15 @@
               and earn your business long-term than charge you upfront and disappear.</p>
           </div>
         </div>
-        <div class="faq-item"><button class="faq-q"><span>"How does the system pay for itself in 30 days?"</span><span
+        <div class="faq-item"><button class="faq-q" aria-expanded="false"><span>"How does the system pay for itself in 30 days?"</span><span
               class="faq-icon">+</span></button>
           <div class="faq-a">
             <p>The average emergency plumbing call is worth $500–$4,000+. Our system recovers leads you're currently
               losing to voicemail, slow response, and competitors with more reviews. Most clients recover 3–5 extra jobs
-              in month one — far more than $297.</p>
+              in month one — far more than $497.</p>
           </div>
         </div>
-        <div class="faq-item"><button class="faq-q"><span>"How is this different from the last marketing company that
+        <div class="faq-item"><button class="faq-q" aria-expanded="false"><span>"How is this different from the last marketing company that
               took my money?"</span><span class="faq-icon">+</span></button>
           <div class="faq-a">
             <p>We don't do "marketing." We build one system: a website that converts, instant lead response, missed-call
@@ -1875,14 +1994,14 @@
               get your money back. No 6-month contracts. No retainers. No vague promises about "brand awareness."</p>
           </div>
         </div>
-        <div class="faq-item"><button class="faq-q"><span>"I don't have time to deal with a new website."</span><span
+        <div class="faq-item"><button class="faq-q" aria-expanded="false"><span>"I don't have time to deal with a new website."</span><span
               class="faq-icon">+</span></button>
           <div class="faq-a">
             <p>You don't have to. We build everything — design, copy, setup. You do one 15-minute call, then review the
               finished site. Total time: under 30 minutes.</p>
           </div>
         </div>
-        <div class="faq-item"><button class="faq-q"><span>"Do I need to learn new software?"</span><span
+        <div class="faq-item"><button class="faq-q" aria-expanded="false"><span>"Do I need to learn new software?"</span><span
               class="faq-icon">+</span></button>
           <div class="faq-a">
             <p>No. The system runs in the background. You'll get a simple dashboard, but you don't need to manage
@@ -1901,21 +2020,21 @@
       </h2>
       <p class="section-sub animate-on-scroll"
         style="color:rgba(255,255,255,0.85);max-width:600px;margin-left:auto;margin-right:auto;text-align:center">
-        Free website build. $297/mo for the full system. One emergency job pays for the entire year. Results in 30 days
+        Free website build. $497/mo for the full system. One emergency job can pay for the entire year. Results in 30 days
         — or your money back.</p>
-      <div class="scarcity-line animate-on-scroll"><span class="pulse-dot"></span>WE ONLY TAKE 5 NEW PLUMBING COMPANIES
-        PER MONTH<span class="pulse-dot" style="margin-left:6px;margin-right:0"></span></div>
+      <div class="scarcity-line animate-on-scroll"><span class="pulse-dot"></span><strong>WE ONLY TAKE 5 NEW PLUMBING COMPANIES
+        PER MONTH</strong><span class="pulse-dot" style="margin-left:6px;margin-right:0"></span></div>
       <div class="form-card animate-on-scroll" id="form-card">
         <h3>Book Your Free 15-Minute Call</h3>
 
         <form id="lead-form" action="https://hooks.omnipresent.com/lead" method="POST">
           <div class="form-group">
             <label for="name">YOUR NAME</label>
-            <input type="text" id="name" name="name" placeholder="John" required>
+            <input type="text" id="name" name="name" placeholder="John Smith" required autocomplete="name">
           </div>
           <div class="form-group">
             <label for="phone">PHONE NUMBER</label>
-            <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567" required>
+            <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567" required autocomplete="tel">
           </div>
           <div id="form-error" style="color:#e53e3e;font-size:14px;margin-bottom:12px;display:none"></div>
           <button type="submit" class="cta-btn" id="submit-btn" style="display:block;width:100%">Book My Free Call
@@ -1926,10 +2045,9 @@
             style="color:#c0c0c0;text-decoration:underline">Tap to text
             "PLUMBER" to (619) 853-5003</a></p>
         <ul class="form-trust">
-          <li><span class="check">✓</span> We call you back within 1 hour (usually faster)</li>
           <li><span class="check">✓</span> 15-minute call — no pitch, no pressure</li>
           <li><span class="check">✓</span> You get a free custom growth plan even if we don't work together</li>
-          <li><span class="check">✓</span> 30-day money-back guarantee — one emergency job covers the entire year</li>
+          <li><span class="check">✓</span> <strong>Built exclusively for plumbing companies</strong></li>
         </ul>
       </div>
     </div>
@@ -1953,8 +2071,14 @@
       btn.addEventListener('click', () => {
         const item = btn.parentElement;
         const wasOpen = item.classList.contains('open');
-        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-        if (!wasOpen) item.classList.add('open');
+        document.querySelectorAll('.faq-item').forEach(i => {
+          i.classList.remove('open');
+          i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+        });
+        if (!wasOpen) {
+          item.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
       });
     });
 
