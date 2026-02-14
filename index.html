@@ -43,7 +43,7 @@
       --urgency-text: #FFF;
       --font-display: 'Inter', -apple-system, sans-serif;
       --font-body: 'Inter', -apple-system, sans-serif;
-      --container-max: 1140px;
+      --container-max: 1440px;
       --container-padding: 24px;
       --card-radius: 16px;
       --btn-radius: 100px;
@@ -271,8 +271,9 @@
 
     .hero-trust span {
       font-weight: 500;
-      font-size: 14px;
-      color: var(--text-secondary)
+      font-size: 16px;
+      color: var(--text-secondary);
+      white-space: nowrap
     }
 
     .hero-trust .check {
@@ -1269,7 +1270,7 @@
     @media(min-width:1024px) {
       .hero-content {
         display: grid;
-        grid-template-columns: 5fr 6fr;
+        grid-template-columns: 7fr 6fr;
         gap: 40px;
         align-items: center
       }
@@ -1283,7 +1284,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        padding-left: 90px
+        margin-top: -60px;
+        transform: translateX(85px)
       }
 
       .hero-mockup {
@@ -1292,7 +1294,9 @@
         object-fit: contain;
         border-radius: 0;
         background: transparent;
-        padding: 0
+        padding: 0;
+        transform: scale(1.28);
+        transform-origin: center center
       }
 
       .sticky-cta {
@@ -1311,12 +1315,16 @@
   <header class="hero">
     <div class="container">
       <div class="hero-content">
-        <div class="hero-text">
-          <h1>Your <strong>plumbing website</strong> is losing you jobs. We replace it in <strong>48 hours</strong> —
-            free.</h1>
-          <p class="hero-sub">We build you a website that turns searches into booked calls — then automate your lead
+        <div class="hero-text" style="text-align:center">
+          <h1 style="text-align:left">Your <strong>plumbing website</strong> is losing you jobs.<span
+              style="display:block;margin-top:16px">We
+              replace it in <strong>48 hours</strong> —
+              free.</span></h1>
+          <p class="hero-sub" style="text-align:left">We build you a website that turns searches into booked calls —
+            then automate your lead
             follow-up, missed-call texts, and review requests. You stay on the job. The system handles the rest.</p>
-          <a href="#book" class="cta-btn" id="hero-cta" style="display:block;width:fit-content">Book My Free Call →</a>
+          <a href="#book" class="cta-btn" id="hero-cta" style="display:block;width:fit-content;margin:0 auto">Book My
+            Free Call →</a>
           <div class="hero-trust">
             <span><span class="check">✓</span> $0 to start</span>
             <span><span class="check">✓</span> No contracts</span>
@@ -1401,7 +1409,7 @@
       </div>
       <div class="problem-cards">
         <div class="problem-card animate-on-scroll">
-          <div class="num">60%+</div>
+          <div class="num">87%+</div>
           <div class="desc">of plumbing website visitors leave without calling</div>
         </div>
         <div class="problem-card animate-on-scroll" style="transition-delay:.1s">
