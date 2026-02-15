@@ -305,6 +305,126 @@
       display: none
     }
 
+    .video-wrapper {
+      border-radius: 16px;
+      aspect-ratio: 16/9;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+      position: relative;
+      width: 100%;
+      background: #0a0a0a;
+      cursor: pointer;
+    }
+
+    .video-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .video-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0,0,0,0.35);
+      transition: background 0.3s;
+    }
+
+    .video-wrapper:hover .video-overlay {
+      background: rgba(0,0,0,0.2);
+    }
+
+    .play-btn {
+      position: relative;
+      width: 80px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1;
+    }
+
+    .play-btn-circle {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: #FF0000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 2;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 4px 20px rgba(255,0,0,0.4);
+    }
+
+    .video-wrapper:hover .play-btn-circle {
+      transform: scale(1.08);
+      box-shadow: 0 6px 28px rgba(255,0,0,0.55);
+    }
+
+    .play-btn-ring {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      border: 3px solid rgba(255,0,0,0.6);
+      transform: translate(-50%, -50%);
+      animation: playPulse 2s ease-out infinite;
+      z-index: 1;
+    }
+
+    .play-btn-ring:nth-child(2) {
+      animation-delay: 0.6s;
+    }
+
+    .play-btn-ring:nth-child(3) {
+      animation-delay: 1.2s;
+    }
+
+    @keyframes playPulse {
+      0% {
+        width: 80px;
+        height: 80px;
+        opacity: 0.7;
+      }
+      100% {
+        width: 140px;
+        height: 140px;
+        opacity: 0;
+      }
+    }
+
+    .video-label {
+      margin-top: 16px;
+      color: rgba(255,255,255,0.8);
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      z-index: 2;
+    }
+
+    .video-wrapper.playing .video-overlay {
+      display: none;
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 16px;
+    }
+
     /* Stats Bar */
     .stats-bar {
       background: var(--bg-light);
@@ -1529,17 +1649,21 @@
           </div>
         </div>
         <div class="hero-img">
-          <div class="hero-mockup"
-            style="background:#0a1628;border-radius:16px;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;cursor:pointer;position:relative;box-shadow:0 8px 32px rgba(0,0,0,0.3)">
-            <div class="play-circle"
-              style="width:80px;height:80px;border-radius:50%;background:rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;border:2px solid rgba(255,255,255,0.3)">
-              <svg aria-hidden="true" width="32" height="32" viewBox="0 0 24 24" fill="#FFF">
-                <polygon points="6 3 20 12 6 21 6 3" />
-              </svg>
+          <div class="video-wrapper hero-mockup" id="heroVideo" onclick="playVideo()">
+            <img src="https://img.youtube.com/vi/pOVhGV-M6fY/maxresdefault.jpg" alt="Watch How It Works" loading="lazy">
+            <div class="video-overlay">
+              <div class="play-btn">
+                <div class="play-btn-ring"></div>
+                <div class="play-btn-ring"></div>
+                <div class="play-btn-ring"></div>
+                <div class="play-btn-circle">
+                  <svg aria-hidden="true" width="32" height="32" viewBox="0 0 24 24" fill="#FFF">
+                    <polygon points="8 4 20 12 8 20 8 4" />
+                  </svg>
+                </div>
+              </div>
+              <span class="video-label">Watch How It Works</span>
             </div>
-            <span
-              style="position:absolute;bottom:20px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,0.6);font-size:14px;font-weight:500;letter-spacing:1px;text-transform:uppercase">Watch
-              How It Works</span>
           </div>
         </div>
       </div>
@@ -2121,6 +2245,18 @@
   <div class="sticky-cta" id="sticky-cta"><a href="#book" class="cta-btn">See What You're Losing — Free Call →</a></div>
 
   <script>
+    // Hero Video
+    function playVideo() {
+      const wrapper = document.getElementById('heroVideo');
+      wrapper.classList.add('playing');
+      const iframe = document.createElement('iframe');
+      iframe.src = 'https://www.youtube.com/embed/pOVhGV-M6fY?rel=0&modestbranding=1&autoplay=1';
+      iframe.title = 'Watch How It Works';
+      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+      iframe.allowFullscreen = true;
+      wrapper.appendChild(iframe);
+    }
+
     // FAQ Accordion
     document.querySelectorAll('.faq-q').forEach(btn => {
       btn.addEventListener('click', () => {
