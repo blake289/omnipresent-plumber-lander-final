@@ -12,18 +12,14 @@
     rel="stylesheet">
   <style>
     :root {
-      --bg-white: #FFF;
-      --bg-light: #F5F7FA;
       --bg-dark: #0B1526;
+      --bg-card: #FFF;
       --text-primary: #0B1526;
       --text-secondary: #5A6A80;
       --accent-blue: #1A73E8;
-      --cta-primary: #DC2626;
-      --cta-primary-hover: #B91C1C;
       --green-check: #00C853;
       --font-display: 'Inter', -apple-system, sans-serif;
-      --font-body: 'Inter', -apple-system, sans-serif;
-      --btn-radius: 100px
+      --font-body: 'Inter', -apple-system, sans-serif
     }
 
     *,
@@ -49,182 +45,142 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 40px 24px
+      padding: 48px 24px 40px
     }
 
-    .thank-you-card {
-      background: #FFF;
-      border-radius: 20px;
-      padding: 60px 40px;
-      max-width: 560px;
-      width: 100%;
+    .container {
+      max-width: 620px;
+      width: 100%
+    }
+
+    /* ── Hero / Confirmation ── */
+    .hero-section {
       text-align: center;
-      box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2)
-    }
-
-    .check-icon {
-      width: 72px;
-      height: 72px;
-      border-radius: 50%;
-      background: rgba(0, 200, 83, 0.1);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 28px;
-      font-size: 36px;
-      color: var(--green-check)
-    }
-
-    h1 {
-      font-family: var(--font-display);
-      font-weight: 800;
-      font-size: 36px;
-      letter-spacing: -0.02em;
-      margin-bottom: 16px;
-      color: var(--text-primary)
-    }
-
-    .subtext {
-      font-size: 18px;
-      color: var(--text-secondary);
-      line-height: 1.65;
       margin-bottom: 36px
     }
 
-    .cta-btn {
-      display: inline-block;
-      background: var(--cta-primary);
-      color: #FFF;
-      font-family: var(--font-body);
-      font-weight: 600;
-      font-size: 16px;
-      padding: 16px 36px;
-      border-radius: var(--btn-radius);
-      box-shadow: 0 4px 14px rgba(220, 38, 38, 0.3);
-      transition: all .25s ease;
-      text-decoration: none
+    .check-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: rgba(0, 200, 83, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      font-size: 32px;
+      color: var(--green-check)
     }
 
-    .cta-btn:hover {
-      background: var(--cta-primary-hover);
-      transform: translateY(-1px)
-    }
-
-    .footer-text {
-      margin-top: 32px;
-      font-size: 14px;
-      color: rgba(255, 255, 255, 0.5)
-    }
-
-    .trust-section {
-      max-width: 560px;
-      width: 100%;
-      margin-top: 40px
-    }
-
-    .trust-section h2 {
+    .hero-section h1 {
       font-family: var(--font-display);
       font-weight: 800;
-      font-size: 26px;
-      text-align: center;
+      font-size: 36px;
+      letter-spacing: -0.03em;
       color: #FFF;
-      margin-bottom: 24px;
-      letter-spacing: -0.02em
+      margin-bottom: 12px
     }
 
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
-      margin-bottom: 24px
+    .hero-section .subhead {
+      font-size: 17px;
+      color: rgba(255, 255, 255, 0.6);
+      line-height: 1.6;
+      max-width: 480px;
+      margin: 0 auto
     }
 
-    .stat-card {
-      background: #FFF;
-      border-radius: 14px;
-      padding: 24px 12px;
-      text-align: center;
-      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08)
+    /* ── What to expect card ── */
+    .value-card {
+      background: var(--bg-card);
+      border-radius: 20px;
+      padding: 36px 32px;
+      box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
+      margin-bottom: 32px
     }
 
-    .stat-number {
-      font-family: var(--font-display);
-      font-weight: 800;
-      font-size: 24px;
-      color: var(--accent-blue);
-      margin-bottom: 6px;
-      letter-spacing: -0.02em
-    }
-
-    .stat-label {
-      font-size: 11px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      color: var(--text-secondary);
-      line-height: 1.4
-    }
-
-    .checklist-card {
-      background: #FFF;
-      border-radius: 16px;
-      padding: 32px;
-      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08)
-    }
-
-    .checklist-card h3 {
+    .value-card h3 {
       font-family: var(--font-display);
       font-weight: 700;
-      font-size: 18px;
+      font-size: 19px;
       text-align: center;
       color: var(--text-primary);
       margin-bottom: 20px
     }
 
-    .checklist-item {
+    .value-item {
       display: flex;
       align-items: flex-start;
       gap: 12px;
-      padding: 8px 0;
+      padding: 10px 0;
       font-size: 15px;
       color: var(--text-secondary);
-      line-height: 1.5
+      line-height: 1.55
     }
 
-    .checklist-item .check {
+    .value-item .check {
       color: var(--green-check);
       font-size: 18px;
       flex-shrink: 0;
-      margin-top: 1px
+      margin-top: 2px
+    }
+
+    /* ── Social proof ── */
+    .proof-section {
+      text-align: center;
+      margin-bottom: 32px
+    }
+
+    .proof-quote {
+      font-size: 16px;
+      font-style: italic;
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.65;
+      max-width: 500px;
+      margin: 0 auto 8px
+    }
+
+    .proof-author {
+      font-size: 14px;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.45)
+    }
+
+    /* ── Footer ── */
+    .footer-text {
+      text-align: center;
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.3);
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06)
     }
 
     @media(max-width:480px) {
-      .thank-you-card {
-        padding: 40px 24px
+      body {
+        padding: 32px 16px 32px
       }
 
-      h1 {
+      .hero-section h1 {
         font-size: 28px
       }
 
-      .subtext {
-        font-size: 16px
+      .hero-section .subhead {
+        font-size: 15px
       }
 
-      .stats-grid {
-        grid-template-columns: repeat(2, 1fr)
+      .value-card {
+        padding: 28px 20px
       }
 
-      .stat-number {
-        font-size: 20px
+      .value-card h3 {
+        font-size: 17px
       }
 
-      .checklist-card {
-        padding: 24px 20px
-      }
-
-      .checklist-item {
+      .value-item {
         font-size: 14px
+      }
+
+      .proof-quote {
+        font-size: 15px
       }
     }
   </style>
@@ -249,40 +205,33 @@
 </head>
 
 <body>
-  <div class="thank-you-card">
-    <div class="check-icon">✓</div>
-    <h1>Your Call Is Booked!</h1>
-    <p class="subtext">We received your info. Look out for text from us within 60 seconds to schedule your free 15-minute strategy call.</p>
-    <a href="index.html" class="cta-btn">Back to Homepage →</a>
-  </div>
-  <div class="trust-section">
-    <h2>You're in Good Hands</h2>
-    <div class="stats-grid">
-      <div class="stat-card">
-        <div class="stat-number">1,200+</div>
-        <div class="stat-label">Local Businesses Served</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number">340+</div>
-        <div class="stat-label">5-Star Google Reviews</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number">30-Day</div>
-        <div class="stat-label">Money-Back Guarantee</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number">7 Days</div>
-        <div class="stat-label">Average Website Delivery</div>
-      </div>
+  <div class="container">
+
+    <!-- Confirmation -->
+    <div class="hero-section">
+      <div class="check-icon">✓</div>
+      <h1>You're booked. Check your texts for the details.</h1>
+      <p class="subhead">We just sent you a confirmation with everything you need.</p>
     </div>
-    <div class="checklist-card">
-      <h3>Before Your Call — Quick Wins (60 Seconds)</h3>
-      <div class="checklist-item"><span class="check">✔</span><span>Have your current website URL handy (we'll audit it live)</span></div>
-      <div class="checklist-item"><span class="check">✔</span><span>Know roughly how many leads/calls you get per week</span></div>
-      <div class="checklist-item"><span class="check">✔</span><span>Think about your #1 frustration with your current marketing</span></div>
+
+    <!-- What to expect on your call -->
+    <div class="value-card">
+      <h3>What to expect on your call:</h3>
+      <div class="value-item"><span class="check">✔</span><span>We'll pull up your online presence and show you exactly where leads are slipping</span></div>
+      <div class="value-item"><span class="check">✔</span><span>You'll get a custom growth plan for your business — yours to keep no matter what</span></div>
+      <div class="value-item"><span class="check">✔</span><span>15 minutes. No pitch. No pressure. Just clarity.</span></div>
     </div>
+
+    <!-- Social Proof -->
+    <div class="proof-section">
+      <p class="proof-quote">"Paid an agency $12K for zero calls. This system brought 11 new jobs month one."</p>
+      <p class="proof-author">— Mike R., San Diego</p>
+    </div>
+
+    <!-- Footer -->
+    <p class="footer-text">Omnipresent · Built by Blake Ernst · 340+ Google Reviews</p>
+
   </div>
-  <p class="footer-text">© 2026 Omnipresent Plumber Marketing</p>
 </body>
 
 </html>
