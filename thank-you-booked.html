@@ -116,6 +116,88 @@
       color: rgba(255, 255, 255, 0.5)
     }
 
+    .trust-section {
+      max-width: 560px;
+      width: 100%;
+      margin-top: 40px
+    }
+
+    .trust-section h2 {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 26px;
+      text-align: center;
+      color: #FFF;
+      margin-bottom: 24px;
+      letter-spacing: -0.02em
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-bottom: 24px
+    }
+
+    .stat-card {
+      background: #FFF;
+      border-radius: 14px;
+      padding: 24px 12px;
+      text-align: center;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08)
+    }
+
+    .stat-number {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 24px;
+      color: var(--accent-blue);
+      margin-bottom: 6px;
+      letter-spacing: -0.02em
+    }
+
+    .stat-label {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--text-secondary);
+      line-height: 1.4
+    }
+
+    .checklist-card {
+      background: #FFF;
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08)
+    }
+
+    .checklist-card h3 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 18px;
+      text-align: center;
+      color: var(--text-primary);
+      margin-bottom: 20px
+    }
+
+    .checklist-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 8px 0;
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.5
+    }
+
+    .checklist-item .check {
+      color: var(--green-check);
+      font-size: 18px;
+      flex-shrink: 0;
+      margin-top: 1px
+    }
+
     @media(max-width:480px) {
       .thank-you-card {
         padding: 40px 24px
@@ -127,6 +209,22 @@
 
       .subtext {
         font-size: 16px
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .stat-number {
+        font-size: 20px
+      }
+
+      .checklist-card {
+        padding: 24px 20px
+      }
+
+      .checklist-item {
+        font-size: 14px
       }
     }
   </style>
@@ -154,8 +252,35 @@
   <div class="thank-you-card">
     <div class="check-icon">✓</div>
     <h1>Your Call Is Booked!</h1>
-    <p class="subtext">Check your email for confirmation details.</p>
+    <p class="subtext">We received your info. Look out for text from us within 60 seconds to schedule your free 15-minute strategy call.</p>
     <a href="index.html" class="cta-btn">Back to Homepage →</a>
+  </div>
+  <div class="trust-section">
+    <h2>You're in Good Hands</h2>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-number">1,200+</div>
+        <div class="stat-label">Local Businesses Served</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">340+</div>
+        <div class="stat-label">5-Star Google Reviews</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">30-Day</div>
+        <div class="stat-label">Money-Back Guarantee</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">7 Days</div>
+        <div class="stat-label">Average Website Delivery</div>
+      </div>
+    </div>
+    <div class="checklist-card">
+      <h3>Before Your Call — Quick Wins (60 Seconds)</h3>
+      <div class="checklist-item"><span class="check">✔</span><span>Have your current website URL handy (we'll audit it live)</span></div>
+      <div class="checklist-item"><span class="check">✔</span><span>Know roughly how many leads/calls you get per week</span></div>
+      <div class="checklist-item"><span class="check">✔</span><span>Think about your #1 frustration with your current marketing</span></div>
+    </div>
   </div>
   <p class="footer-text">© 2026 Omnipresent Plumber Marketing</p>
 </body>

@@ -4,26 +4,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>You're All Set! | Omnipresent Plumber Marketing</title>
-  <meta name="description" content="Thank you for booking your free call with Omnipresent Plumber Marketing.">
+  <title>You're In | Omnipresent Plumber Marketing</title>
+  <meta name="description" content="Lock in your free strategy call with Omnipresent Plumber Marketing.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet">
   <style>
     :root {
-      --bg-white: #FFF;
-      --bg-light: #F5F7FA;
       --bg-dark: #0B1526;
+      --bg-card: #FFF;
       --text-primary: #0B1526;
       --text-secondary: #5A6A80;
+      --text-muted: #8896A6;
       --accent-blue: #1A73E8;
       --cta-primary: #DC2626;
       --cta-primary-hover: #B91C1C;
       --green-check: #00C853;
+      --border-light: #E5E7EB;
       --font-display: 'Inter', -apple-system, sans-serif;
-      --font-body: 'Inter', -apple-system, sans-serif;
-      --btn-radius: 100px
+      --font-body: 'Inter', -apple-system, sans-serif
     }
 
     *,
@@ -48,85 +48,182 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      padding: 40px 24px
+      padding: 48px 24px 40px
     }
 
-    .thank-you-card {
-      background: #FFF;
-      border-radius: 20px;
-      padding: 60px 40px;
-      max-width: 560px;
-      width: 100%;
+    .container {
+      max-width: 620px;
+      width: 100%
+    }
+
+    /* ── Section 1: Confirmation ── */
+    .hero-section {
       text-align: center;
-      box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2)
-    }
-
-    .check-icon {
-      width: 72px;
-      height: 72px;
-      border-radius: 50%;
-      background: rgba(0, 200, 83, 0.1);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 28px;
-      font-size: 36px;
-      color: var(--green-check)
-    }
-
-    h1 {
-      font-family: var(--font-display);
-      font-weight: 800;
-      font-size: 36px;
-      letter-spacing: -0.02em;
-      margin-bottom: 16px;
-      color: var(--text-primary)
-    }
-
-    .subtext {
-      font-size: 18px;
-      color: var(--text-secondary);
-      line-height: 1.65;
       margin-bottom: 36px
     }
 
-    .cta-btn {
-      display: inline-block;
-      background: var(--cta-primary);
+    .check-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: rgba(0, 200, 83, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      font-size: 32px;
+      color: var(--green-check)
+    }
+
+    .hero-section h1 {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 36px;
+      letter-spacing: -0.03em;
       color: #FFF;
-      font-family: var(--font-body);
-      font-weight: 600;
+      margin-bottom: 12px
+    }
+
+    .hero-section .subhead {
+      font-size: 17px;
+      color: rgba(255, 255, 255, 0.6);
+      line-height: 1.6;
+      max-width: 480px;
+      margin: 0 auto
+    }
+
+    /* ── Section 2: Calendar ── */
+    .calendar-card {
+      background: var(--bg-card);
+      border-radius: 20px;
+      padding: 40px 32px;
+      box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
+      margin-bottom: 24px
+    }
+
+    .calendar-card .cal-intro {
+      font-size: 15px;
+      color: var(--text-secondary);
+      text-align: center;
+      margin-bottom: 20px;
+      line-height: 1.6
+    }
+
+    .calendar-wrap {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border-light)
+    }
+
+    /* ── Section 3: Fallback CTA ── */
+    .fallback {
+      text-align: center;
+      padding: 20px 16px;
+      font-size: 15px;
+      color: rgba(255, 255, 255, 0.5);
+      line-height: 1.6
+    }
+
+    /* ── Section 4: What happens on the call ── */
+    .value-card {
+      background: var(--bg-card);
+      border-radius: 20px;
+      padding: 36px 32px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+      margin-bottom: 32px
+    }
+
+    .value-card h3 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 19px;
+      text-align: center;
+      color: var(--text-primary);
+      margin-bottom: 20px
+    }
+
+    .value-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 10px 0;
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.55
+    }
+
+    .value-item .check {
+      color: var(--green-check);
+      font-size: 18px;
+      flex-shrink: 0;
+      margin-top: 2px
+    }
+
+    /* ── Section 5: Social proof ── */
+    .proof-section {
+      text-align: center;
+      margin-bottom: 32px
+    }
+
+    .proof-quote {
       font-size: 16px;
-      padding: 16px 36px;
-      border-radius: var(--btn-radius);
-      box-shadow: 0 4px 14px rgba(220, 38, 38, 0.3);
-      transition: all .25s ease;
-      text-decoration: none
+      font-style: italic;
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.65;
+      max-width: 500px;
+      margin: 0 auto 8px
     }
 
-    .cta-btn:hover {
-      background: var(--cta-primary-hover);
-      transform: translateY(-1px)
-    }
-
-    .footer-text {
-      margin-top: 32px;
+    .proof-author {
       font-size: 14px;
-      color: rgba(255, 255, 255, 0.5)
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.45)
+    }
+
+    /* ── Footer ── */
+    .footer-text {
+      text-align: center;
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.3);
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06)
     }
 
     @media(max-width:480px) {
-      .thank-you-card {
-        padding: 40px 24px
+      body {
+        padding: 32px 16px 32px
       }
 
-      h1 {
+      .hero-section h1 {
         font-size: 28px
       }
 
-      .subtext {
-        font-size: 16px
+      .hero-section .subhead {
+        font-size: 15px
+      }
+
+      .calendar-card {
+        padding: 28px 20px
+      }
+
+      .calendar-card .cal-intro {
+        font-size: 14px
+      }
+
+      .value-card {
+        padding: 28px 20px
+      }
+
+      .value-card h3 {
+        font-size: 17px
+      }
+
+      .value-item {
+        font-size: 14px
+      }
+
+      .proof-quote {
+        font-size: 15px
       }
     }
   </style>
@@ -151,13 +248,45 @@
 </head>
 
 <body>
-  <div class="thank-you-card">
-    <div class="check-icon">✓</div>
-    <h1>You're All Set!</h1>
-    <p class="subtext">We'll be in touch shortly to schedule your free call.</p>
-    <a href="index.html" class="cta-btn">Back to Homepage →</a>
+  <div class="container">
+
+    <!-- Section 1: Confirmation + Redirect -->
+    <div class="hero-section">
+      <div class="check-icon">✓</div>
+      <h1>You're in. Now lock in your call.</h1>
+      <p class="subhead">We only take 5 plumbing companies per month — grab your spot before someone else does.</p>
+    </div>
+
+    <!-- Section 2: GHL Calendar Embed -->
+    <div class="calendar-card">
+      <p class="cal-intro">Pick a time that works. 15 minutes. No pitch. No pressure.</p>
+      <div class="calendar-wrap">
+        <iframe src="https://link.omnipresent.app/widget/booking/SxpR3xGWSQxBDYeHsUg7" style="width:100%;border:none;overflow:hidden" scrolling="no" id="SxpR3xGWSQxBDYeHsUg7_thankyou"></iframe>
+        <script src="https://link.omnipresent.app/js/form_embed.js" type="text/javascript"></script>
+      </div>
+    </div>
+
+    <!-- Section 3: Fallback CTA -->
+    <p class="fallback">Can't book right now? No worries — we'll text you a direct link in the next 60 seconds.</p>
+
+    <!-- Section 4: What happens on the call -->
+    <div class="value-card">
+      <h3>Here's what happens on the call:</h3>
+      <div class="value-item"><span class="check">✔</span><span>We'll show you exactly where you're losing leads right now</span></div>
+      <div class="value-item"><span class="check">✔</span><span>You'll get a custom growth plan — yours to keep even if we don't work together</span></div>
+      <div class="value-item"><span class="check">✔</span><span>No contracts, no pressure, no invoice</span></div>
+    </div>
+
+    <!-- Section 5: Social Proof -->
+    <div class="proof-section">
+      <p class="proof-quote">"Paid an agency $12K for zero calls. This system brought 11 new jobs month one."</p>
+      <p class="proof-author">— Mike R., San Diego</p>
+    </div>
+
+    <!-- Footer -->
+    <p class="footer-text">Omnipresent · Built by Blake Ernst · 340+ Google Reviews</p>
+
   </div>
-  <p class="footer-text">© 2026 Omnipresent Plumber Marketing</p>
 </body>
 
 </html>
