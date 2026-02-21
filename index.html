@@ -2507,13 +2507,8 @@
           method: 'POST', headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ name, phone })
         });
-      } catch (err) { /* still show success for demo */ }
-      formCard.querySelector('form').style.display = 'none';
-      formCard.querySelector('.form-trust').style.display = 'none';
-      const success = document.createElement('div');
-      success.className = 'form-success';
-      success.innerHTML = '<div class="check-lg">✓</div><h3>You\'re in. We\'ll call you within 1 hour.</h3><p>Check your phone — you\'ll get a text from us shortly.</p>';
-      formCard.appendChild(success);
+      } catch (err) { /* still redirect */ }
+      window.location.href = 'thank-you-lead.html';
     });
   </script>
 </body>
