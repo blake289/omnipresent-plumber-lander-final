@@ -2367,7 +2367,7 @@
           <div style="flex:1;height:1px;background:rgba(255,255,255,0.12)"></div>
         </div>
 
-        <form id="lead-form" action="https://hooks.omnipresent.com/lead" method="POST">
+        <form id="lead-form" action="https://services.leadconnectorhq.com/hooks/eluw794zYWVA5D4Iiizy/webhook-trigger/8031369d-9913-463a-bb1a-7e5d382784cc" method="POST">
           <div class="form-group">
             <label for="name">YOUR NAME</label>
             <input type="text" id="name" name="name" placeholder="John Smith" required autocomplete="name">
@@ -2503,7 +2503,7 @@
       submitBtn.disabled = true;
       submitBtn.textContent = 'Sending...';
       try {
-        await fetch('https://hooks.omnipresent.com/lead', {
+        await fetch('https://services.leadconnectorhq.com/hooks/eluw794zYWVA5D4Iiizy/webhook-trigger/8031369d-9913-463a-bb1a-7e5d382784cc', {
           method: 'POST', headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ name, phone })
         });
