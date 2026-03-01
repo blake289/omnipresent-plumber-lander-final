@@ -977,7 +977,7 @@
     }
 
     .value-right {
-      font-size: 19px;
+      font-size: 26px;
       color: #f08070;
       text-decoration: none;
       white-space: nowrap;
@@ -1005,36 +1005,98 @@
     .price-reveal {
       background: linear-gradient(135deg, #16803C, #22A34D, #2BB85A);
       border-radius: 16px;
-      padding: 10px 20px;
+      padding: 18px 28px;
       text-align: center;
-      margin-top: 18px;
+      margin-top: 10px;
       box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1) inset, 0 8px 32px rgba(22, 128, 60, 0.35);
       border: 1px solid rgba(255, 255, 255, 0.12)
+    }
+
+    .price-old-label {
+      display: block;
+      font-size: 16px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #FFF;
+      margin-top: 28px;
+      margin-bottom: 10px
     }
 
     .price-old-bubble {
       background: linear-gradient(135deg, #B91C1C, #DC2626, #EF4444);
       border-radius: 12px;
-      padding: 20px 28px;
+      padding: 24px 32px;
       text-align: center;
-      margin-top: 24px;
+      margin-top: 0;
       box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1) inset, 0 6px 20px rgba(185, 28, 28, 0.3);
       border: 1px solid rgba(255, 255, 255, 0.1)
     }
 
+    .price-agency-bubble {
+      background: linear-gradient(135deg, #B91C1C, #DC2626, #EF4444);
+      border-radius: 12px;
+      padding: 20px 32px;
+      text-align: center;
+      margin-top: 0;
+      box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1) inset, 0 6px 20px rgba(185, 28, 28, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.1)
+    }
+
+    .price-agency-label {
+      display: block;
+      font-size: 16px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #FFF;
+      margin-top: 20px;
+      margin-bottom: 10px
+    }
+
+    .price-agency-amount {
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 1.1;
+      color: #FFF;
+      position: relative;
+      display: inline-block
+    }
+
+    .price-agency-amount::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: -4px;
+      right: -4px;
+      height: 2px;
+      background: rgba(255, 255, 255, 0.7);
+      transform: rotate(-8deg);
+      transform-origin: center;
+      pointer-events: none
+    }
+
     .price-old {
-      font-size: 20px;
-      color: rgba(255, 255, 255, 0.8);
       margin-bottom: 0
+    }
+
+    .price-old strong {
+      display: block;
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      color: #FFF;
+      margin-bottom: 6px
     }
 
     .price-old .strikethrough {
       text-decoration: none;
-      color: rgba(255, 255, 255, 0.8);
+      color: #FFF;
       position: relative;
       display: inline-block;
-      font-size: 20px;
-      font-weight: 600
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 1.1
     }
 
     .price-old .strikethrough::after {
@@ -1051,10 +1113,11 @@
     }
 
     .price-label {
+      display: block;
       font-weight: 700;
-      font-size: 20px;
-      margin-top: 12px;
-      margin-bottom: -8px;
+      font-size: 26px;
+      margin-top: 22px;
+      margin-bottom: 10px;
       text-transform: uppercase;
       letter-spacing: 0.1em;
       color: #FFF
@@ -1469,7 +1532,7 @@
       }
 
       .value-right {
-        font-size: 16px
+        font-size: 22px
       }
 
       .value-card {
@@ -1493,7 +1556,7 @@
       }
 
       .price-old .strikethrough {
-        font-size: 16px
+        font-size: 20px
       }
 
       .featured-quote {
@@ -1679,6 +1742,14 @@
         font-size: 48px
       }
 
+      .price-old .strikethrough {
+        font-size: 24px
+      }
+
+      .price-agency-amount {
+        font-size: 24px
+      }
+
       .faq {
         padding: 96px 0
       }
@@ -1722,7 +1793,7 @@
         border-radius: 100px;
         white-space: nowrap;
         flex-shrink: 0;
-        margin-left: 24px
+        margin-left: 36px
       }
 
       .urgency-bar-cta:hover {
@@ -1811,7 +1882,7 @@
 <body>
 
   <!-- Urgency Bar -->
-  <div class="urgency-bar" role="banner"><p>February spots: <strong>3 of 5 remaining</strong> — we only take 5 plumbing companies per
+  <div class="urgency-bar" role="banner"><p><span id="urgency-month">This month</span> spots: <strong>3 of 5 remaining</strong> — we only take 5 plumbing companies per
     month</p><a href="#book" class="urgency-bar-cta" onclick="fbq('track', 'Lead')">Book a Free Call →</a></div>
 
   <!-- Hero -->
@@ -1822,7 +1893,7 @@
           <span class="hero-label">Built Exclusively for Plumbing Companies</span>
           <h1>You're losing <strong>$5K–$15K</strong> <strong>a<br>month</strong> in jobs you
             never<br>even knew
-            about.<span style="display:block;margin-top:28px">We fix that. In <strong>30 days.</strong><br>Or you don't
+            about.<span style="display:block;margin-top:28px">We fix that. In <strong>48 Hours.</strong><br>Or you don't
               pay.</span></h1>
           <p class="hero-sub">Right now, leads are calling you and getting voicemail. They're
             finding you on Google and hitting "back." Every missed call, every lost form fill — that's money in your
@@ -2255,11 +2326,16 @@
         </div>
       </div>
       <div class="animate-on-scroll" style="max-width:600px;margin:0 auto">
+        <div class="price-old-label">TOTAL IF BOUGHT SEPARATELY:</div>
         <div class="price-old-bubble">
-          <div class="price-old"><strong>TOTAL IF BOUGHT SEPARATELY:</strong><br><span class="strikethrough">$3,000–$5,000 upfront + $1,637/mo</span></div>
+          <div class="price-old"><span class="strikethrough">$3,000–$5,000 upfront + $1,637/mo</span></div>
         </div>
+        <div class="price-agency-label">Other Agencies</div>
+        <div class="price-agency-bubble">
+          <div class="price-agency-amount">$3k-10k/mo</div>
+        </div>
+        <div class="price-label">The LeakProof System</div>
         <div class="price-reveal">
-          <div class="price-label">The LeakProof System</div>
           <div class="price-amount">$0 Upfront + $497/mo</div>
         </div>
         <div class="price-annual">
@@ -2410,6 +2486,12 @@
   <div class="sticky-cta" id="sticky-cta"><a href="#book" class="cta-btn" onclick="fbq('track', 'Lead')">See What You're Losing — Free Call →</a></div>
 
   <script>
+    // Urgency bar month label (auto-updates each month)
+    const urgencyMonth = document.getElementById('urgency-month');
+    if (urgencyMonth) {
+      urgencyMonth.textContent = new Intl.DateTimeFormat('en-US', { month: 'long' }).format(new Date());
+    }
+
     // Hero Video
     function playVideo() {
       const wrapper = document.getElementById('heroVideo');
