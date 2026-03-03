@@ -11,6 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg-white: #FFF;
@@ -316,6 +317,419 @@
 
     .hero-img {
       display: none
+    }
+
+    /* ROI Calculator */
+    .roi-calculator-section {
+      background: #F5F7FA;
+      padding: 96px 0
+    }
+
+    .roi-calculator-section .calc-wrapper {
+      max-width: 1120px;
+      margin: 0 auto
+    }
+
+    .roi-calculator-section .calc-main {
+      display: grid;
+      grid-template-columns: 1fr 1fr
+    }
+
+    .roi-calculator-section .calc-header {
+      background: linear-gradient(135deg, #0c1220 0%, #0f172a 100%);
+      border-radius: 16px 16px 0 0;
+      padding: 32px 36px 28px;
+      border-bottom: 1px solid rgba(56, 189, 248, 0.15)
+    }
+
+    .roi-calculator-section .calc-header .tag {
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      color: #38bdf8;
+      text-transform: uppercase;
+      margin-bottom: 8px
+    }
+
+    .roi-calculator-section .calc-header h2 {
+      font-size: 26px;
+      font-weight: 800;
+      color: #f8fafc;
+      line-height: 1.2
+    }
+
+    .roi-calculator-section .calc-header h2 .red {
+      color: #ef4444
+    }
+
+    .roi-calculator-section .calc-header p {
+      font-size: 16px;
+      color: #94a3b8;
+      margin-top: 8px;
+      line-height: 1.5
+    }
+
+    .roi-calculator-section .calc-sliders {
+      background: #0f172a;
+      padding: 36px 36px 12px;
+      border-radius: 0 0 0 16px;
+      border-right: 1px solid rgba(56, 189, 248, 0.15)
+    }
+
+    .roi-calculator-section .slider-group {
+      margin-bottom: 32px
+    }
+
+    .roi-calculator-section .slider-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 10px
+    }
+
+    .roi-calculator-section .slider-label {
+      font-size: 20px;
+      font-weight: 600;
+      color: #e2e8f0;
+      letter-spacing: 0.01em
+    }
+
+    .roi-calculator-section .slider-value {
+      font-size: 22px;
+      font-weight: 700;
+      color: #38bdf8;
+      font-family: 'Space Mono', monospace
+    }
+
+    .roi-calculator-section .slider-sublabel {
+      font-size: 14px;
+      color: #94a3b8;
+      margin-bottom: 10px;
+      margin-top: -6px
+    }
+
+    .roi-calculator-section .slider-track {
+      position: relative;
+      height: 40px;
+      display: flex;
+      align-items: center
+    }
+
+    .roi-calculator-section .track-bg {
+      position: absolute;
+      width: 100%;
+      height: 6px;
+      border-radius: 3px;
+      background: #1e293b
+    }
+
+    .roi-calculator-section .track-fill {
+      position: absolute;
+      height: 6px;
+      border-radius: 3px;
+      background: linear-gradient(90deg, #0ea5e9, #38bdf8);
+      transition: width .05s
+    }
+
+    .roi-calculator-section .track-thumb {
+      position: absolute;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: #38bdf8;
+      box-shadow: 0 0 16px rgba(56, 189, 248, 0.4), 0 0 4px rgba(56, 189, 248, 0.2);
+      transform: translateX(-50%);
+      pointer-events: none;
+      transition: left .05s
+    }
+
+    .roi-calculator-section .slider-track input[type="range"] {
+      position: absolute;
+      width: 100%;
+      height: 40px;
+      opacity: 0;
+      cursor: pointer;
+      z-index: 2;
+      -webkit-appearance: none
+    }
+
+    .roi-calculator-section .slider-minmax {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      color: #64748b;
+      margin-top: 4px;
+      font-family: 'Space Mono', monospace
+    }
+
+    .roi-calculator-section .calc-results {
+      background: linear-gradient(180deg, #0f172a 0%, #0c1220 100%);
+      border-radius: 0 0 16px 0;
+      padding: 0 36px 36px
+    }
+
+    .roi-calculator-section .calc-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.3), transparent);
+      margin-bottom: 28px
+    }
+
+    .roi-calculator-section .severity-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border-radius: 8px;
+      padding: 8px 14px;
+      margin-bottom: 24px;
+      transition: all .3s
+    }
+
+    .roi-calculator-section .severity-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0
+    }
+
+    .roi-calculator-section .severity-text {
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.05em
+    }
+
+    @keyframes calcPulse {
+      0%,
+      100% {
+        opacity: 1
+      }
+
+      50% {
+        opacity: .4
+      }
+    }
+
+    .roi-calculator-section .results-grid {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-bottom: 24px
+    }
+
+    .roi-calculator-section .result-card {
+      flex: 1 1 200px;
+      border-radius: 12px;
+      padding: 24px
+    }
+
+    .roi-calculator-section .result-card.monthly {
+      background: linear-gradient(135deg, rgba(239, 68, 68, 0.08), rgba(239, 68, 68, 0.03));
+      border: 1px solid rgba(239, 68, 68, 0.15)
+    }
+
+    .roi-calculator-section .result-card.annual {
+      background: linear-gradient(135deg, rgba(239, 68, 68, 0.12), rgba(239, 68, 68, 0.04));
+      border: 1px solid rgba(239, 68, 68, 0.2)
+    }
+
+    .roi-calculator-section .result-label {
+      font-size: 14px;
+      font-weight: 600;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 8px
+    }
+
+    .roi-calculator-section .result-number {
+      font-size: 42px;
+      font-weight: 900;
+      font-family: 'Space Mono', monospace;
+      line-height: 1
+    }
+
+    .roi-calculator-section .result-number.red {
+      color: #ef4444
+    }
+
+    .roi-calculator-section .result-number.green {
+      color: #22c55e
+    }
+
+    .roi-calculator-section .result-sub {
+      font-size: 15px;
+      color: #64748b;
+      margin-top: 8px
+    }
+
+    .roi-calculator-section .recovery-section {
+      margin-bottom: 24px
+    }
+
+    .roi-calculator-section .recovery-label-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px
+    }
+
+    .roi-calculator-section .recovery-label-row .arrow {
+      font-size: 18px;
+      color: #22c55e;
+      line-height: 1
+    }
+
+    .roi-calculator-section .recovery-label-row .text {
+      font-size: 16px;
+      font-weight: 700;
+      color: #e2e8f0
+    }
+
+    .roi-calculator-section .result-card.rec-monthly {
+      background: linear-gradient(135deg, rgba(34, 197, 94, 0.08), rgba(34, 197, 94, 0.03));
+      border: 1px solid rgba(34, 197, 94, 0.15)
+    }
+
+    .roi-calculator-section .result-card.rec-annual {
+      background: linear-gradient(135deg, rgba(34, 197, 94, 0.12), rgba(34, 197, 94, 0.04));
+      border: 1px solid rgba(34, 197, 94, 0.2)
+    }
+
+    .roi-calculator-section .context-bar {
+      background: rgba(56, 189, 248, 0.06);
+      border: 1px solid rgba(56, 189, 248, 0.12);
+      border-radius: 10px;
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 16px
+    }
+
+    .roi-calculator-section .ctx-col {
+      flex: 1 1 150px
+    }
+
+    .roi-calculator-section .ctx-col.right {
+      text-align: right
+    }
+
+    .roi-calculator-section .ctx-col.center {
+      text-align: center
+    }
+
+    .roi-calculator-section .ctx-label {
+      font-size: 14px;
+      color: #94a3b8;
+      margin-bottom: 4px
+    }
+
+    .roi-calculator-section .ctx-num {
+      font-size: 26px;
+      font-weight: 800;
+      font-family: 'Space Mono', monospace
+    }
+
+    .roi-calculator-section .ctx-num.blue {
+      color: #38bdf8
+    }
+
+    .roi-calculator-section .ctx-num.green {
+      color: #22c55e
+    }
+
+    .roi-calculator-section .ctx-num.amber {
+      color: #f59e0b
+    }
+
+    .roi-calculator-section .ctx-num .unit {
+      font-size: 13px;
+      font-weight: 500;
+      color: #64748b
+    }
+
+    .roi-calculator-section .cost-of-waiting {
+      background: linear-gradient(90deg, rgba(239, 68, 68, 0.06), rgba(239, 68, 68, 0.02));
+      border: 1px solid rgba(239, 68, 68, 0.1);
+      border-radius: 10px;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 20px
+    }
+
+    .roi-calculator-section .cost-of-waiting .cow-text {
+      font-size: 17px;
+      font-weight: 600;
+      color: #94a3b8
+    }
+
+    .roi-calculator-section .cost-of-waiting .cow-amount {
+      font-size: 24px;
+      font-weight: 800;
+      color: #ef4444;
+      font-family: 'Space Mono', monospace
+    }
+
+    .roi-calculator-section .disclaimer {
+      font-size: 14px;
+      color: #475569;
+      text-align: center;
+      line-height: 1.5
+    }
+
+    @media (max-width:900px) {
+      .roi-calculator-section .calc-main {
+        grid-template-columns: 1fr
+      }
+
+      .roi-calculator-section .calc-sliders {
+        border-radius: 0;
+        border-right: none;
+        border-bottom: 1px solid rgba(56, 189, 248, 0.12)
+      }
+
+      .roi-calculator-section .calc-results {
+        border-radius: 0 0 16px 16px
+      }
+    }
+
+    @media (max-width:520px) {
+      .roi-calculator-section .calc-header {
+        padding: 24px 20px 22px
+      }
+
+      .roi-calculator-section .calc-sliders {
+        padding: 28px 20px 8px
+      }
+
+      .roi-calculator-section .calc-results {
+        padding: 0 20px 28px
+      }
+
+      .roi-calculator-section .calc-header h2 {
+        font-size: 21px
+      }
+
+      .roi-calculator-section .result-number {
+        font-size: 30px
+      }
+
+      .roi-calculator-section .ctx-num {
+        font-size: 20px
+      }
+
+      .roi-calculator-section .ctx-col.right,
+      .roi-calculator-section .ctx-col.center {
+        text-align: left
+      }
+
+      .roi-calculator-section .result-card {
+        padding: 20px
+      }
     }
 
     .video-wrapper {
@@ -1935,16 +2349,16 @@
     <div class="container">
       <div class="stats-grid">
         <div class="animate-on-scroll">
-          <div class="stat-num" data-target="1200" data-prefix="" data-suffix="+">0</div>
-          <div class="stat-label">Businesses Served</div>
+          <div class="stat-num">$5,000-$15,000+</div>
+          <div class="stat-label">Recovered Monthly</div>
         </div>
         <div class="animate-on-scroll" style="transition-delay:.1s">
-          <div class="stat-num" data-target="4.9" data-prefix="" data-suffix=" Stars" data-decimals="1">0</div>
-          <div class="stat-label">On Google</div>
+          <div class="stat-num">&lt; 60 Sec</div>
+          <div class="stat-label">Lead Response Time</div>
         </div>
         <div class="animate-on-scroll" style="transition-delay:.2s">
           <div class="stat-num" data-target="340" data-prefix="" data-suffix="+">0</div>
-          <div class="stat-label">5-Star Reviews on Google</div>
+          <div class="stat-label">5-Star Reviews</div>
         </div>
       </div>
     </div>
@@ -1989,19 +2403,147 @@
       </div>
       <div class="problem-cards">
         <div class="problem-card animate-on-scroll">
-          <div class="num">87%+</div>
-          <div class="desc">of people who find your site leave without calling</div>
+          <div class="num">78%</div>
+          <div class="desc">of customers hire the first business to respond</div>
         </div>
         <div class="problem-card animate-on-scroll" style="transition-delay:.1s">
           <div class="num">$5K–$15K+</div>
           <div class="desc">in jobs lost every month to voicemail and slow follow-up</div>
         </div>
         <div class="problem-card animate-on-scroll" style="transition-delay:.2s">
-          <div class="num">78%</div>
-          <div class="desc">of customers hire the first business to respond</div>
+          <div class="num">87%+</div>
+          <div class="desc">of people who find your site leave without calling</div>
         </div>
       </div>
       <a href="#book" class="cta-btn" style="margin-top:40px;display:inline-block" onclick="fbq('track', 'Lead')">See What You’re Losing →</a>
+    </div>
+  </section>
+
+  <!-- ROI Calculator -->
+  <section class="roi-calculator-section">
+    <div class="container">
+      <div class="calc-wrapper animate-on-scroll">
+        <div class="calc-header">
+          <div class="tag">Revenue Leak Calculator</div>
+          <h2>How much is your voicemail <span class="red">costing</span> you?</h2>
+          <p>Adjust the sliders to match your business. The math is simple - and brutal.</p>
+        </div>
+
+        <div class="calc-main">
+          <div class="calc-sliders">
+            <div class="slider-group">
+              <div class="slider-top">
+                <span class="slider-label">Missed calls per day</span>
+                <span class="slider-value" id="missedVal">5</span>
+              </div>
+              <div class="slider-sublabel">Most plumbers miss 5-10+ calls/day while on the job</div>
+              <div class="slider-track">
+                <div class="track-bg"></div>
+                <div class="track-fill" id="missedFill"></div>
+                <input type="range" id="missedSlider" min="1" max="20" step="1" value="5">
+                <div class="track-thumb" id="missedThumb"></div>
+              </div>
+              <div class="slider-minmax"><span>1</span><span>20</span></div>
+            </div>
+
+            <div class="slider-group">
+              <div class="slider-top">
+                <span class="slider-label">Average job ticket</span>
+                <span class="slider-value" id="ticketVal">$1,200</span>
+              </div>
+              <div class="slider-sublabel">Drain clearing ~$300 - Water heater ~$1,500 - Repipe ~$5,000+</div>
+              <div class="slider-track">
+                <div class="track-bg"></div>
+                <div class="track-fill" id="ticketFill"></div>
+                <input type="range" id="ticketSlider" min="200" max="5000" step="50" value="1200">
+                <div class="track-thumb" id="ticketThumb"></div>
+              </div>
+              <div class="slider-minmax"><span>$200</span><span>$5,000</span></div>
+            </div>
+
+            <div class="slider-group">
+              <div class="slider-top">
+                <span class="slider-label">Conversion rate (missed call → booked job)</span>
+                <span class="slider-value" id="closeVal">40%</span>
+              </div>
+              <div class="slider-sublabel">Realistic range: 10-30% of missed calls become booked jobs</div>
+              <div class="slider-track">
+                <div class="track-bg"></div>
+                <div class="track-fill" id="closeFill"></div>
+                <input type="range" id="closeSlider" min="10" max="70" step="5" value="40">
+                <div class="track-thumb" id="closeThumb"></div>
+              </div>
+              <div class="slider-minmax"><span>10%</span><span>70%</span></div>
+            </div>
+          </div>
+
+          <div class="calc-results">
+            <div class="calc-divider"></div>
+
+            <div class="severity-badge" id="severityBadge">
+              <div class="severity-dot" id="severityDot"></div>
+              <span class="severity-text" id="severityText"></span>
+            </div>
+
+            <div class="results-grid">
+              <div class="result-card monthly">
+                <div class="result-label">Monthly Revenue Lost</div>
+                <div class="result-number red" id="monthlyLost">$0</div>
+                <div class="result-sub" id="monthlySub"></div>
+              </div>
+              <div class="result-card annual">
+                <div class="result-label">Annual Revenue Lost</div>
+                <div class="result-number red" id="annualLost">$0</div>
+                <div class="result-sub" id="annualSub"></div>
+              </div>
+            </div>
+
+            <div class="recovery-section">
+              <div class="recovery-label-row">
+                <span class="arrow">↓</span>
+                <span class="text">With LeakProof recovering those missed calls:</span>
+              </div>
+              <div class="results-grid">
+                <div class="result-card rec-monthly">
+                  <div class="result-label">Monthly Revenue Recovered</div>
+                  <div class="result-number green" id="monthlyRec">$0</div>
+                  <div class="result-sub" id="monthlyRecSub"></div>
+                </div>
+                <div class="result-card rec-annual">
+                  <div class="result-label">Annual Revenue Recovered</div>
+                  <div class="result-number green" id="annualRec">$0</div>
+                  <div class="result-sub" id="annualRecSub"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="context-bar">
+              <div class="ctx-col">
+                <div class="ctx-label">System cost</div>
+                <div class="ctx-num blue">$497<span class="unit">/mo</span></div>
+              </div>
+              <div class="ctx-col center">
+                <div class="ctx-label">Net profit after cost</div>
+                <div class="ctx-num green" id="netProfit"></div>
+              </div>
+              <div class="ctx-col right">
+                <div class="ctx-label">Return on investment</div>
+                <div class="ctx-num amber" id="roiPercent"></div>
+              </div>
+            </div>
+
+            <div class="cost-of-waiting">
+              <span style="font-size:24px">⏳</span>
+              <span class="cow-text">Every month you wait costs you</span>
+              <span class="cow-amount" id="waitCost">$0</span>
+            </div>
+
+            <div class="disclaimer">
+            Based on 30 days/month - 100% instant response coverage - Does not include $10K+ emergency or repipe jobs
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -2332,7 +2874,7 @@
         </div>
         <div class="price-agency-label">Other Agencies</div>
         <div class="price-agency-bubble">
-          <div class="price-agency-amount">$3k-10k/mo</div>
+              <div class="price-agency-amount">$3,000-$10,000/mo</div>
         </div>
         <div class="price-label">The LeakProof System</div>
         <div class="price-reveal">
@@ -2550,6 +3092,115 @@
       });
     }, { threshold: 0.3 });
     document.querySelectorAll('.stat-num[data-target]').forEach(el => statObs.observe(el));
+
+    // ROI Calculator
+    (() => {
+      const WD = 30;
+      const SC = 497;
+      const sM = document.getElementById('missedSlider');
+      const sT = document.getElementById('ticketSlider');
+      const sC = document.getElementById('closeSlider');
+      if (!sM || !sT || !sC) return;
+
+      const calcAnim = {};
+      function animateValue(el, from, to, prefix = '$', dur = 350) {
+        if (calcAnim[el.id]) cancelAnimationFrame(calcAnim[el.id]);
+        const t0 = performance.now();
+        (function tick(now) {
+          const p = Math.min((now - t0) / dur, 1);
+          const e = 1 - Math.pow(1 - p, 3);
+          el.textContent = prefix + Math.round(from + (to - from) * e).toLocaleString('en-US');
+          if (p < 1) calcAnim[el.id] = requestAnimationFrame(tick);
+        })(t0);
+      }
+
+      function formatShort(n) {
+        if (n >= 1e6) return '$' + (n / 1e6).toFixed(1) + 'M';
+        if (n >= 1e3) return '$' + Math.round(n / 1e3) + 'K';
+        return '$' + n;
+      }
+
+      let prev = { ml: 0, al: 0, mr: 0, ar: 0, np: 0, wc: 0 };
+
+      function updateSliderVisual(slider, fillId, thumbId) {
+        const p = ((slider.value - slider.min) / (slider.max - slider.min)) * 100;
+        document.getElementById(fillId).style.width = p + '%';
+        document.getElementById(thumbId).style.left = p + '%';
+      }
+
+      function calc() {
+        const m = +sM.value;
+        const t = +sT.value;
+        const c = +sC.value;
+
+        updateSliderVisual(sM, 'missedFill', 'missedThumb');
+        updateSliderVisual(sT, 'ticketFill', 'ticketThumb');
+        updateSliderVisual(sC, 'closeFill', 'closeThumb');
+
+        document.getElementById('missedVal').textContent = m;
+        document.getElementById('ticketVal').textContent = '$' + t.toLocaleString();
+        document.getElementById('closeVal').textContent = c + '%';
+
+        const missedMonthly = m * WD;
+        const jobsLost = Math.round(missedMonthly * c / 100);
+        const monthlyLost = jobsLost * t;
+        const annualLost = monthlyLost * 12;
+
+        const jobsRecovered = Math.round(missedMonthly * c / 100);
+        const monthlyRecovered = jobsRecovered * t;
+        const annualRecovered = monthlyRecovered * 12;
+        const netProfit = monthlyRecovered - SC;
+        const roi = Math.round((netProfit / SC) * 100);
+
+        animateValue(document.getElementById('monthlyLost'), prev.ml, monthlyLost);
+        animateValue(document.getElementById('annualLost'), prev.al, annualLost);
+        animateValue(document.getElementById('monthlyRec'), prev.mr, monthlyRecovered);
+        animateValue(document.getElementById('annualRec'), prev.ar, annualRecovered);
+        animateValue(document.getElementById('netProfit'), prev.np, netProfit, '+$');
+        animateValue(document.getElementById('waitCost'), prev.wc, monthlyLost);
+
+        prev = { ml: monthlyLost, al: annualLost, mr: monthlyRecovered, ar: annualRecovered, np: netProfit, wc: monthlyLost };
+
+        document.getElementById('monthlySub').textContent = jobsLost + ' jobs lost · ' + missedMonthly + ' missed calls/mo';
+        document.getElementById('annualSub').textContent = "That's " + formatShort(annualLost) + ' going to your competitors';
+        document.getElementById('monthlyRecSub').textContent = jobsRecovered + ' jobs recovered - 100% of missed calls get an instant response';
+        document.getElementById('annualRecSub').textContent = formatShort(annualRecovered) + ' back in your pocket';
+
+        document.getElementById('roiPercent').innerHTML = roi + '%<span class="unit"> ROI</span>';
+
+        const badge = document.getElementById('severityBadge');
+        const dot = document.getElementById('severityDot');
+        const text = document.getElementById('severityText');
+        let color;
+        let label;
+
+        if (annualLost > 300000) {
+          color = '#ef4444';
+          label = "CRITICAL - You're hemorrhaging revenue";
+          dot.style.animation = 'calcPulse 1.5s infinite';
+        } else if (annualLost > 100000) {
+          color = '#f59e0b';
+          label = 'HIGH - Significant revenue leak';
+          dot.style.animation = 'none';
+        } else {
+          color = '#38bdf8';
+          label = 'MODERATE - Still leaving money on the table';
+          dot.style.animation = 'none';
+        }
+
+        badge.style.background = color + '15';
+        badge.style.border = '1px solid ' + color + '30';
+        dot.style.background = color;
+        dot.style.boxShadow = '0 0 8px ' + color + '60';
+        text.style.color = color;
+        text.textContent = label;
+      }
+
+      sM.addEventListener('input', calc);
+      sT.addEventListener('input', calc);
+      sC.addEventListener('input', calc);
+      calc();
+    })();
 
   </script>
 </body>
