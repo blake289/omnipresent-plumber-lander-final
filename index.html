@@ -2475,6 +2475,7 @@
     // Hero Video
     function playVideo() {
       const wrapper = document.getElementById('heroVideo');
+      if (wrapper.querySelector('iframe')) return;
       wrapper.classList.add('playing');
       const iframe = document.createElement('iframe');
       iframe.src = 'https://www.youtube.com/embed/pOVhGV-M6fY?rel=0&modestbranding=1&autoplay=1';
