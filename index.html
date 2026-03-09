@@ -2603,8 +2603,8 @@
             </div>
 
             <div style="text-align:center; margin-top: 16px; margin-bottom: 24px;">
-              <a href="#book" class="cta-btn" id="dynamicCalcBtn" onclick="fbq('track', 'Lead')">Recover Your $[X] —
-                Book a Free Call →</a>
+              <a href="#book" class="cta-btn" id="dynamicCalcBtn" onclick="fbq('track', 'Lead')">Recover Your
+                $[X]/mo</a>
             </div>
 
             <div class="cost-of-waiting">
@@ -3262,7 +3262,7 @@
         document.getElementById('monthlyRecSub').textContent = jobsRecovered + ' jobs recovered';
         document.getElementById('annualRecSub').textContent = formatShort(annualRecovered) + ' back in your pocket';
 
-        document.getElementById('dynamicCalcBtn').textContent = 'Recover Your ' + formatShort(monthlyRecovered).replace('.0M', 'M').replace('.0K', 'K') + '/mo — Book a Free Call →';
+        document.getElementById('dynamicCalcBtn').textContent = 'Recover Your ' + formatShort(monthlyRecovered).replace('.0M', 'M').replace('.0K', 'K') + '/mo';
 
         const returnPerDollar = (annualRecovered / (SC * 12)).toFixed(1);
         document.getElementById('roiMultiplier').innerHTML = returnPerDollar + 'x <span class="unit">return</span>';
