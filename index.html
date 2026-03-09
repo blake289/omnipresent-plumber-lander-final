@@ -3262,7 +3262,7 @@
         document.getElementById('monthlyRecSub').textContent = jobsRecovered + ' jobs recovered';
         document.getElementById('annualRecSub').textContent = formatShort(annualRecovered) + ' back in your pocket';
 
-        document.getElementById('dynamicCalcBtn').textContent = 'Recover Your ' + formatShort(monthlyRecovered).replace('.0M', 'M').replace('.0K', 'K') + ' — Book a Free Call →';
+        document.getElementById('dynamicCalcBtn').textContent = 'Recover Your ' + formatShort(monthlyRecovered).replace('.0M', 'M').replace('.0K', 'K') + '/mo — Book a Free Call →';
 
         const returnPerDollar = (annualRecovered / (SC * 12)).toFixed(1);
         document.getElementById('roiMultiplier').innerHTML = returnPerDollar + 'x <span class="unit">return</span>';
