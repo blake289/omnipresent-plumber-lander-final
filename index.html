@@ -3240,13 +3240,15 @@
         document.getElementById('closeVal').textContent = c + '%';
 
         const missedMonthly = m * WD;
-        const monthlyLost = missedMonthly * t;
+        const exactJobsRecovered = missedMonthly * (c / 100);
+
+        const monthlyLost = exactJobsRecovered * t;
         const annualLost = monthlyLost * 12;
 
-        const jobsLost = Math.round(missedMonthly * (c / 100));
-        const jobsRecovered = jobsLost;
-        const monthlyRecovered = jobsRecovered * t;
+        const monthlyRecovered = exactJobsRecovered * t;
         const annualRecovered = monthlyRecovered * 12;
+
+        const displayJobs = Math.floor(exactJobsRecovered);
         const netProfit = monthlyRecovered - SC;
         const roi = Math.round((netProfit / SC) * 100);
 
@@ -3259,7 +3261,7 @@
 
         prev = { ml: monthlyLost, al: annualLost, mr: monthlyRecovered, ar: annualRecovered, np: netProfit, wc: monthlyLost };
 
-        document.getElementById('monthlyRecSub').textContent = jobsRecovered + ' jobs recovered';
+        document.getElementById('monthlyRecSub').textContent = displayJobs + ' jobs recovered';
         document.getElementById('annualRecSub').textContent = formatShort(annualRecovered) + ' back in your pocket';
 
         document.getElementById('dynamicCalcBtn').textContent = 'Recover Your ' + formatShort(monthlyRecovered).replace('.0M', 'M').replace('.0K', 'K') + '/mo';
